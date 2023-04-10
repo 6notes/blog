@@ -2,9 +2,20 @@
 id: cr4pqe5ffax19kl81czc7qq
 title: multiSSH
 desc: ""
-updated: 1679017832454
+updated: 1681108797142
 created: 1677486506165
 ---
+
+# Summary
+
+You have a private repo and you want to publish a portion of it without having
+to manually copy files between repos.
+
+# Outline
+
+- Set up the repos and accounts
+- Set up multiple ssh
+- Set up the Github pushing with rsync
 
 # Using git with multiple ssh keys and multiple accounts
 
