@@ -1,7 +1,7 @@
 ---
 id: cr4pqe5ffax19kl81czc7qq
 title: multiSSH
-desc: ""
+desc: ''
 updated: 1681108797142
 created: 1677486506165
 ---

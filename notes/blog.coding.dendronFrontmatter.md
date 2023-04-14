@@ -1,8 +1,8 @@
 ---
 id: iyrjekgnm084f8hjabat7eh
 title: dendronFrontmatter
-desc: ""
-updated: 1681158677085
+desc: ''
+updated: 1681261633251
 created: 1681110151127
 ---
 
@@ -23,6 +23,7 @@ can be used offline.
 - [Creating an app to use on mobile](#creating-an-app-to-use-on-mobile)
   - [Images not showing up on GitHub Pages](#images-not-showing-up-on-github-pages)
   - [Favicon not showing up on mobile](#favicon-not-showing-up-on-mobile)
+  - [Editor isn't editable](#editor-isnt-editable)
 
 # Dendron's frontmatter `id`
 
@@ -87,3 +88,10 @@ PWA. To host the website, I used
 
 - The main fix I did was renaming the `manifest.json` file to
   `site.webmanifest`.
+
+## Editor isn't editable
+
+- If you have a line like
+  `isDisabled={editor.can().chain().focus().undo().blur().run()}` somewhere in
+  your TipTap editor code, it can cause the editor to blur every time you click
+  it. You can solve this by removing `blur()` from the condition.

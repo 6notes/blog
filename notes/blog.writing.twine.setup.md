@@ -1,7 +1,7 @@
 ---
 id: jkoetciw8gx345vhbipiijy
 title: Setup
-desc: ""
+desc: ''
 updated: 1681016939888
 created: 1681014788105
 ---
