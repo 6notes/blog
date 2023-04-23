@@ -2,7 +2,7 @@
 id: jkoetciw8gx345vhbipiijy
 title: Setup
 desc: ""
-updated: 1682216955388
+updated: 1682217491976
 created: 1681014788105
 ---
 
@@ -68,7 +68,6 @@ well.
   This is the first passage in a Twine game!
 
   [[This is a link|Next Passage]]
-
 
   :: Next Passage
   The player just clicked a link to get here!
