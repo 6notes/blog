@@ -1,8 +1,8 @@
 ---
 id: jkoetciw8gx345vhbipiijy
-title: Setup
+title: Twine/Tweego and GitHub Pages Setup
 desc: ""
-updated: 1682217491976
+updated: 1682305882112
 created: 1681014788105
 ---
 
@@ -21,6 +21,8 @@ well.
 # Assumptions
 
 - You already have git installed and know how to use git.
+- You have `brew` installed and are using MacOS for the installation related
+  steps.
 
 # Rough steps for Twine/Tweego and GitHub Pages setup
 
@@ -47,6 +49,7 @@ well.
 - Use `tweego -v` to check that it's installed properly.
 - It should be installed in `/usr/local/Cellar`.
   - This is where you can find the story formats.
+- [Tweego installation for Windows](https://github.com/ChapelR/tweego-setup/blob/tweego-2/docs/installing-tweego.md)
 
 # Tweego usage
 
