@@ -2,7 +2,7 @@
 id: jkoetciw8gx345vhbipiijy
 title: Twine/Tweego and GitHub Pages Setup
 desc: ""
-updated: 1682315847873
+updated: 1682316172539
 created: 1681014788105
 ---
 
@@ -113,6 +113,14 @@ well.
   specifying a version, or specifying the version listed in
   [`go.mod`](https://github.com/tmedwards/tweego/blob/master/go.mod). I think
   it's best to just stick with v1.13.x.
+
+# Testing changes locally
+
+- You can use `mkdir -p ./dist && tweego -o ./dist/index.html ./passages` then
+  open the `index.html` file to view your changes.
+- You'll probably want a `.gitignore` file with `dist/` inside to avoid
+  uploading the `dist/` directory to GitHub as the workflow action will build it
+  anyways and use the newly built `.html` file.
 
 # Resources
 
