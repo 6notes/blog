@@ -2,7 +2,7 @@
 id: jkoetciw8gx345vhbipiijy
 title: Twine/Tweego and GitHub Pages Setup
 desc: ""
-updated: 1682305882112
+updated: 1682315847873
 created: 1681014788105
 ---
 
@@ -93,13 +93,17 @@ well.
 - I think the `${{ secrets.GITHUB_TOKEN }}` is supplied by the GitHub Actions
   bot so you don't need to add any repository secrets.
 - I added the `dist/index.html` output path into repo variables.
+  - Go to `Settings -> Actions -> General -> Workflow permissions` and:
+    - turn on 'Allow GitHub Actions to create and approve pull requests'
+    - select the 'Read and write permissions' option
+  - Go to `Settings -> Secrets and variables -> Actions` and create these
+    repository variables:
+    - `OUTPUT_DIRECTORY` with the value of `dist`.
+    - `OUTPUT_FILENAME` with the value of `index.html`.
+  - Go to `Settings -> Pages -> Build and deployment` and change the branch to
+    `pages` or whatever your `publish_branch` is in your workflow action
+    `peaceiris/actions-gh-pages@v3` section.
   - [Repo variables are in the `vars` context according to `mbaum0`](https://github.com/orgs/community/discussions/42133#discussioncomment-4501954).
-- Just like in [[blog.coding.github.multiSSH]], if you're getting an issue with
-  GitHub Actions being denied, then see
-  [`tdy` on checking permissions if GitHub Actions is being denied](https://stackoverflow.com/a/75308228).
-  - I think checking the
-    `Allow GitHub Actions to create and approve pull requests` checkbox helps
-    the most.
 
 ## Notes
 
