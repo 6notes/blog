@@ -1,0 +1,171 @@
+<h1 id="twinetweego-and-github-pages-setup">Twine/Tweego and GitHub Pages Setup<a aria-hidden="true" class="anchor-heading icon-link" href="#twinetweego-and-github-pages-setup"></a></h1>
+<h1 id="demo">Demo<a aria-hidden="true" class="anchor-heading icon-link" href="#demo"></a></h1>
+<ul>
+<li><a href="https://github.com/6notes/tweeExample">Repo</a></li>
+<li><a href="https://6notes.github.io/tweeExample/">Website</a></li>
+</ul>
+<h1 id="setup">Setup<a aria-hidden="true" class="anchor-heading icon-link" href="#setup"></a></h1>
+<p>I will be following
+<a href="https://dev.to/lazerwalker/a-modern-developer-s-workflow-for-twine-4imp">Emilia's tutorial</a>
+on how to set up the Twine workflow. I will likely add some modifications as
+well.</p>
+<h1 id="assumptions">Assumptions<a aria-hidden="true" class="anchor-heading icon-link" href="#assumptions"></a></h1>
+<ul>
+<li>You already have git installed and know how to use git.</li>
+<li>You have <code>brew</code> installed and are using MacOS for the installation related
+steps.</li>
+</ul>
+<h1 id="rough-steps-for-twinetweego-and-github-pages-setup">Rough steps for Twine/Tweego and GitHub Pages setup<a aria-hidden="true" class="anchor-heading icon-link" href="#rough-steps-for-twinetweego-and-github-pages-setup"></a></h1>
+<h2 id="testing-locally">Testing locally<a aria-hidden="true" class="anchor-heading icon-link" href="#testing-locally"></a></h2>
+<ul>
+<li>Download the Tweego binary</li>
+<li>Try the Tweego binary on an example <code>.twee</code> file</li>
+</ul>
+<h2 id="setting-up-a-repo-with-github-pages">Setting up a repo with GitHub Pages<a aria-hidden="true" class="anchor-heading icon-link" href="#setting-up-a-repo-with-github-pages"></a></h2>
+<ul>
+<li>Create the new git repo.</li>
+<li>Make the passage <code>.twee</code> files.</li>
+<li>Copy the story formats to your repo from your local Tweego install.</li>
+<li>Set up the workflow action.</li>
+</ul>
+<h1 id="local-tweego-installation">Local Tweego installation<a aria-hidden="true" class="anchor-heading icon-link" href="#local-tweego-installation"></a></h1>
+<ul>
+<li>Install
+<a href="https://github.com/potatodiet/homebrew-tweego#how-to-use">Tweego with Homebrew</a>.
+<pre class="language-{bash}"><code class="language-{bash}">brew tap potato-diet/tweego
+brew install tweego
+</code></pre>
+</li>
+<li>Use <code>tweego -v</code> to check that it's installed properly.</li>
+<li>It should be installed in <code>/usr/local/Cellar</code>.
+<ul>
+<li>This is where you can find the story formats.</li>
+</ul>
+</li>
+<li><a href="https://github.com/ChapelR/tweego-setup/blob/tweego-2/docs/installing-tweego.md">Tweego installation for Windows</a></li>
+</ul>
+<h1 id="tweego-usage">Tweego usage<a aria-hidden="true" class="anchor-heading icon-link" href="#tweego-usage"></a></h1>
+<ul>
+<li>
+<p>Example <code>.twee</code> file from Emilia's A Modern Developer's Workflow For Twine</p>
+<pre class="language-{twee}"><code class="language-{twee}">::StoryData
+{
+    "ifid": "F2277A49-95C9-4B14-AE66-62526089F861",
+    "format": "Harlowe",
+    "format-version": "3.1.0",
+    "start": "Start"
+}
+
+::StoryTitle
+My test story!
+
+:: Start
+This is the first passage in a Twine game!
+
+[[This is a link|Next Passage]]
+
+:: Next Passage
+The player just clicked a link to get here!
+</code></pre>
+</li>
+<li>
+<p>Testing Tweego output:</p>
+<ul>
+<li>Change directories to where you want to output the html file.</li>
+<li>Create the example <code>.twee</code> file. Let's say we name it as <code>test.twee</code>.</li>
+<li>Add the example contents above into the <code>test.twee</code> file.</li>
+<li>Create the html output by using <code>tweego test.twee -o example.html</code>.
+<ul>
+<li>The <code>-o</code> argument is for the output file name according to
+<a href="http://www.motoslave.net/tweego/docs/">the docs</a>.
+<ul>
+<li><code>-o FILE</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>According to the docs, it looks like Tweego will use all <code>.twee</code> files within
+a specified directory. You can use this to split the passages into different
+files.</p>
+</li>
+</ul>
+<h1 id="cicd-github-actions">CI/CD Github Actions<a aria-hidden="true" class="anchor-heading icon-link" href="#cicd-github-actions"></a></h1>
+<ul>
+<li>I think the <code>${{ secrets.GITHUB_TOKEN }}</code> is supplied by the GitHub Actions
+bot so you don't need to add any repository secrets.</li>
+<li>I added the <code>dist/index.html</code> output path into repo variables.
+<ul>
+<li>Go to <code>Settings -> Actions -> General -> Workflow permissions</code> and:
+<ul>
+<li>turn on 'Allow GitHub Actions to create and approve pull requests'</li>
+<li>select the 'Read and write permissions' option</li>
+</ul>
+</li>
+<li>Go to <code>Settings -> Secrets and variables -> Actions</code> and create these
+repository variables:
+<ul>
+<li><code>OUTPUT_DIRECTORY</code> with the value of <code>dist</code>.</li>
+<li><code>OUTPUT_FILENAME</code> with the value of <code>index.html</code>.</li>
+</ul>
+</li>
+<li>Go to <code>Settings -> Pages -> Build and deployment</code> and change the branch to
+<code>pages</code> or whatever your <code>publish_branch</code> is in your workflow action
+<code>peaceiris/actions-gh-pages@v3</code> section.</li>
+<li><a href="https://github.com/orgs/community/discussions/42133#discussioncomment-4501954">Repo variables are in the <code>vars</code> context according to <code>mbaum0</code></a>.</li>
+</ul>
+</li>
+</ul>
+<h2 id="notes">Notes<a aria-hidden="true" class="anchor-heading icon-link" href="#notes"></a></h2>
+<ul>
+<li>I've been having trouble with trying Go v1.17.x. I think it's because the
+Tweego repo hasn't been updated to be compatible with that version of Go;
+trying the simple suggested fixes like choosing the latest version or
+specifying a version, or specifying the version listed in
+<a href="https://github.com/tmedwards/tweego/blob/master/go.mod"><code>go.mod</code></a>. I think
+it's best to just stick with v1.13.x.</li>
+</ul>
+<h1 id="testing-changes-locally">Testing changes locally<a aria-hidden="true" class="anchor-heading icon-link" href="#testing-changes-locally"></a></h1>
+<ul>
+<li>You can use <code>mkdir -p ./dist &#x26;&#x26; tweego -o ./dist/index.html ./passages</code> then
+open the <code>index.html</code> file to view your changes.</li>
+<li>You'll probably want a <code>.gitignore</code> file with <code>dist/</code> inside to avoid
+uploading the <code>dist/</code> directory to GitHub as the workflow action will build it
+anyways and use the newly built <code>.html</code> file.</li>
+</ul>
+<h1 id="resources">Resources<a aria-hidden="true" class="anchor-heading icon-link" href="#resources"></a></h1>
+<ul>
+<li><a href="https://idrellegames.tumblr.com/post/674326647526260736/a-quick-guide-to-using-tweego">Tutorial on multiple <code>.twee</code> file compiling with Tweego</a></li>
+<li><a href="https://dev.to/lazerwalker/a-modern-developer-s-workflow-for-twine-4imp">A Modern Developer's Workflow For Twine by Em Lazer-Walker</a></li>
+<li><a href="https://github.com/JoshuaGrams/tiny-qbn/blob/master/doc/tweego.md">Using Tweego and VSCode by <code>JoshuaGrams</code></a></li>
+</ul>
+<h1 id="further-areas-to-explore">Further areas to explore<a aria-hidden="true" class="anchor-heading icon-link" href="#further-areas-to-explore"></a></h1>
+<ul>
+<li>TypeScript</li>
+<li>Importing functions between passages?</li>
+<li>UI
+<ul>
+<li>Adding UI like health bars or tabs</li>
+<li>Adding background images
+<ul>
+<li>AI generated background images based on description text? Could just be
+low resolution if too intensive.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Adding music/sound effects</li>
+<li>Creating an inventory system; I expect it to be an Object.
+<ul>
+<li>Story passage that is gated by items.</li>
+</ul>
+</li>
+<li>Story passage transitions. Like maybe smoke effects before revealing the text.</li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/">Root</a></li>
+</ul>

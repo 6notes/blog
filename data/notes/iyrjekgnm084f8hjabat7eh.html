@@ -1,0 +1,89 @@
+<h1 id="dendronfrontmatter">dendronFrontmatter<a aria-hidden="true" class="anchor-heading icon-link" href="#dendronfrontmatter"></a></h1>
+<h1 id="summary">Summary<a aria-hidden="true" class="anchor-heading icon-link" href="#summary"></a></h1>
+<p>I explore how I figured out Dendron's frontmatter format to make valid Dendron
+notes on mobile. I also go over some roadbumps I encountered along the way. The
+resulting
+<a href="https://6notes.github.io/dendronFrontmatterGen/">Dendron Frontmatter Generator app</a>
+can be used offline.</p>
+<h1 id="outline">Outline<a aria-hidden="true" class="anchor-heading icon-link" href="#outline"></a></h1>
+<ul>
+<li><a href="#summary">Summary</a></li>
+<li><a href="#outline">Outline</a></li>
+<li><a href="#dendrons-frontmatter-id">Dendron's frontmatter <code>id</code></a></li>
+<li><a href="#dendrons-frontmatter-createdupdated">Dendron's frontmatter <code>created</code>/<code>updated</code></a></li>
+<li><a href="#creating-an-app-to-use-on-mobile">Creating an app to use on mobile</a>
+<ul>
+<li><a href="#images-not-showing-up-on-github-pages">Images not showing up on GitHub Pages</a></li>
+<li><a href="#favicon-not-showing-up-on-mobile">Favicon not showing up on mobile</a></li>
+<li><a href="#editor-isnt-editable">Editor isn't editable</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="dendrons-frontmatter-id">Dendron's frontmatter <code>id</code><a aria-hidden="true" class="anchor-heading icon-link" href="#dendrons-frontmatter-id"></a></h1>
+<p>This took a while to find. I think the crucial hint was finding
+<a href="https://wiki.dendron.so/notes/ZeC74FYVECsf9bpyngVMU/#fixfrontmatter">Dendron Doctor's <code>fixFrontmatter</code> command</a>.
+In VSCode, if you pull up the Dendron commands, you can pick <code>Doctor</code> which
+leads to a new set of commands. You'll find the <code>fixFrontmatter</code> doctor command.</p>
+<p>From here you search <code>fixFrontmatter</code> on the
+<a href="https://github.com/dendronhq/dendron/search?q=fixFrontmatter">Dendron GitHub Repo</a>,
+which leads you to the <code>FIX_FRONTMATTER</code> enum key, which leads to
+<a href="https://github.com/dendronhq/dendron/blob/8c7322ce5cea9e31eae057c08a90b4e788e8c542/packages/plugin-core/src/commands/Doctor.ts">the Doctor.ts file</a>,
+then to
+<a href="https://github.com/dendronhq/dendron/blob/8c7322ce5cea9e31eae057c08a90b4e788e8c542/packages/plugin-core/src/commands/Doctor.ts#L511">the Backfill line</a>.
+In the
+<a href="https://github.com/dendronhq/dendron/blob/e3dbc9eac5872ef6811b73a1f16baae5fd77dc0a/packages/engine-server/src/backfillV2/service.ts#L15">BackfillService file</a>,
+you'll find that it edits the frontmatter id with <code>genUUID</code>.
+<a href="https://github.com/dendronhq/dendron/search?q=genUUID">Searching for <code>genUUID</code></a>
+eventually leads you to
+<a href="https://github.com/dendronhq/dendron/blob/9e93cb79448867bbe915a90069dfdd8c1357807d/packages/common-all/src/uuid.ts">the uuid file</a>
+which shows that nanoid is used to generate the id.</p>
+<h1 id="dendrons-frontmatter-createdupdated">Dendron's frontmatter <code>created</code>/<code>updated</code><a aria-hidden="true" class="anchor-heading icon-link" href="#dendrons-frontmatter-createdupdated"></a></h1>
+<p>This was mostly trial and error. I had prior knowledge that dates are stored as
+X amount of seconds since a past date, and this format looked similar. It ended
+up being <code>new Date().valueOf()</code>. I wasn't able to find this in the repo to
+verify, but they do look the same and are in the same ballpark. If you find the
+difference between the <code>updated</code> value when you save now, and
+<code>new Date().valueOf()</code> in your browser console, the values will be pretty close.</p>
+<h1 id="creating-an-app-to-use-on-mobile">Creating an app to use on mobile<a aria-hidden="true" class="anchor-heading icon-link" href="#creating-an-app-to-use-on-mobile"></a></h1>
+<p>Going into this, I wanted these features:</p>
+<ul>
+<li>Offline capability which likely meant making a progressive web app (PWA).</li>
+<li>Easy and quick to use, which means being able to load the app and just copy
+the frontmatter to the clipboard.</li>
+</ul>
+<p>The main benefit I wanted from using a progressive web app was
+<a href="https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps">network independence</a>
+as I wanted to be able to use the app without being connected to wifi.</p>
+<p>I used both
+<a href="https://melvingeorge.me/blog/nextjs-pwa">Melvin George's How to make a quick PWA tutorial</a>
+and
+<a href="https://articles.wesionary.team/pwa-with-next-js-6073f07a0b26">Bigyan Poudel's How to make a quick PWA tutorial</a>.
+The tutorial required favicons so I used
+<a href="https://openai.com/product/dall-e-2">DALL-E 2</a> to generate a generic icon.
+Afterwards, I generated favicons with
+<a href="https://realfavicongenerator.net/">Real Favicon Generator</a> to make a NextJS
+PWA. To host the website, I used
+<a href="https://dev.to/github/how-to-host-a-static-nextjs-site-on-github-pages-4pe0">Rizèl Scarlett's tutorial on how to host a Hugo or Next.js site on GitHub Pages</a>.</p>
+<h2 id="images-not-showing-up-on-github-pages">Images not showing up on GitHub Pages<a aria-hidden="true" class="anchor-heading icon-link" href="#images-not-showing-up-on-github-pages"></a></h2>
+<ul>
+<li>To make my images show up properly on GitHub Pages, I had to change the image
+paths to be relative.</li>
+<li>For example: <code>src="/images/next.svg"</code> to <code>src="./images/next.svg"</code>.</li>
+</ul>
+<h2 id="favicon-not-showing-up-on-mobile">Favicon not showing up on mobile<a aria-hidden="true" class="anchor-heading icon-link" href="#favicon-not-showing-up-on-mobile"></a></h2>
+<ul>
+<li>The main fix I did was renaming the <code>manifest.json</code> file to
+<code>site.webmanifest</code>.</li>
+</ul>
+<h2 id="editor-isnt-editable">Editor isn't editable<a aria-hidden="true" class="anchor-heading icon-link" href="#editor-isnt-editable"></a></h2>
+<ul>
+<li>If you have a line like
+<code>isDisabled={editor.can().chain().focus().undo().blur().run()}</code> somewhere in
+your TipTap editor code, it can cause the editor to blur every time you click
+it. You can solve this by removing <code>blur()</code> from the condition.</li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/">Root</a></li>
+</ul>

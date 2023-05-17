@@ -1,0 +1,210 @@
+<h1 id="multissh">multiSSH<a aria-hidden="true" class="anchor-heading icon-link" href="#multissh"></a></h1>
+<h1 id="summary">Summary<a aria-hidden="true" class="anchor-heading icon-link" href="#summary"></a></h1>
+<p>You have a private repo and you want to publish a portion of it without having
+to manually copy files between repos.</p>
+<h1 id="outline">Outline<a aria-hidden="true" class="anchor-heading icon-link" href="#outline"></a></h1>
+<ul>
+<li>Set up the repos and accounts</li>
+<li>Set up multiple ssh</li>
+<li>Set up the Github pushing with rsync</li>
+</ul>
+<h1 id="using-git-with-multiple-ssh-keys-and-multiple-accounts">Using git with multiple ssh keys and multiple accounts<a aria-hidden="true" class="anchor-heading icon-link" href="#using-git-with-multiple-ssh-keys-and-multiple-accounts"></a></h1>
+<ul>
+<li>Situation: You want to commit to two different repos with two different
+accounts.</li>
+<li>You can do this by:
+<ul>
+<li>Generating SSH keys for both accounts.
+<ul>
+<li>Make sure you don't have a <code>*</code> host because it will override the others.</li>
+</ul>
+</li>
+<li>Register the public keys for their respective GitHub accounts.</li>
+<li><a href="https://stackoverflow.com/a/69580744">Setup <code>~/.ssh/config</code></a> so that each
+account/GitHub host has its own ssh file.</li>
+<li>Setup the git origin to have the modified host so that it uses your
+corresponding ssh key.</li>
+<li>Clone the repos.</li>
+<li>In each repo, use <code>git config</code>s to set the user name and email.</li>
+</ul>
+</li>
+</ul>
+<h1 id="ssh-keys">SSH keys<a aria-hidden="true" class="anchor-heading icon-link" href="#ssh-keys"></a></h1>
+<ul>
+<li>
+<p>If you have
+<a href="https://gist.github.com/jexchan/2351996?permalink_comment_id=4286595#gistcomment-4286595">a generic <code>*</code> host</a>,
+you'll need to make it un-generic. This is because regardless of all of your
+settings, having a generic host will supercede everything.</p>
+</li>
+<li>
+<p>For notation, I will use <code>{variable}</code> to denote variable names.</p>
+<ul>
+<li>Say you have <code>url = git@github.com:{workplaceName}/{workRepo}.git</code> in
+<code>{workRepo}/.git/config</code>. If <code>workplaceName = 'bar'; workRepo = 'chair'</code>,
+then the url would look like <code>url = git@github.com:bar/chair.git</code> and it
+would be in <code>bar/.git/config</code>)</li>
+</ul>
+</li>
+<li>
+<p>Say you have a cloned work repo with
+<code>url = git@github.com:{workplaceName}/{workRepo}.git</code> in
+<code>{workRepo}/.git/config</code>, you have another cloned personal repo with
+<code>url = git@github.com:{personal}/{personalRepo}.git</code> in
+<code>{personalRepo}/.git/config</code>, and a <code>~/.ssh/config</code> file with:</p>
+<pre class="language-{ssh"><code class="language-{ssh"># Work/All purpose
+Host *
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_rsa
+
+# Personal
+Host github.com-personal
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_rsa_personal
+</code></pre>
+<p>The default ssh keys for both the work and personal repos will be the work ssh
+key because the <code>*</code> host setting takes priority over all of the other hosts.</p>
+</li>
+<li>
+<p>Here's what you can do to fix this:</p>
+<ul>
+<li>Modify the <code>*</code> host:
+<ul>
+<li>Change the host to <code>work</code>.</li>
+<li>Add <code>User git</code>.</li>
+<li>Possibly optional: Add <code>IdentitiesOnly yes</code></li>
+</ul>
+</li>
+<li>Modify <code>workRepo/.git/config</code>:
+<ul>
+<li>Change the url to <code>work:workplaceName/workplaceName.git</code>.</li>
+</ul>
+</li>
+<li>Possibly optional: Modify the <code>github.com-personal</code> host:
+<ul>
+<li>Add <code>IdentitiesOnly yes</code></li>
+</ul>
+</li>
+<li>Modify <code>personalRepo/.git/config</code>:
+<ul>
+<li>Change the url to <code>git@github.com-personal:personalName/personalRepo.git</code></li>
+</ul>
+</li>
+<li>The updated config file should look like this:</li>
+</ul>
+<pre class="language-{ssh"><code class="language-{ssh">Host work
+  HostName github.com
+  User git
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_rsa
+  IdentitiesOnly yes
+
+Host github.com-personal
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_rsa_personal
+  IdentitiesOnly yes
+</code></pre>
+</li>
+<li>
+<p>You can verify that the ssh keys are set up properly by doing the following:</p>
+<ul>
+<li>Use <code>ssh -T {Host}</code> for both hosts.
+<ul>
+<li>You can use <code>ssh -vT {Host}</code> instead for a more verbose message for
+debugging.</li>
+<li>You should get something like: <code>Hi {sshName}! You've successfully ...</code>,
+and the ssh names should be different between the repos.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="git-configuration">Git configuration<a aria-hidden="true" class="anchor-heading icon-link" href="#git-configuration"></a></h1>
+<ul>
+<li>Once you're done fixing the ssh keys, you'll have to configure the remote URL
+for git and the user name and email for the repo you're working with. By
+default you will be making commits with the user/email in your global
+<code>gitconfig</code>, but you can override this in a specific repo with the following:
+<ul>
+<li><code>git config user.name "Your Name Here"</code></li>
+<li><code>git config user.email your@email.com</code></li>
+<li>Use the following to update your git origin remote URL:
+<ul>
+<li><code>git remote add origin git@{personalHost}:{personal}/{personalRepo}.git</code></li>
+<li><code>git remote -v</code></li>
+</ul>
+</li>
+<li>Make local commit to both repos then use <code>git log</code> to verify:
+<ul>
+<li>Make a small change to a file.</li>
+<li>Do a <code>git add</code>.</li>
+<li>Do a <code>git commit</code>.</li>
+<li>Do <code>git log</code> and check that the author name.</li>
+<li>Do <code>git reset HEAD~1</code> to undo the local commit you just made.</li>
+<li>Undo the small change you made to the file.</li>
+<li>You should get different author names between the two repos.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>In the future, you can set the <code>url</code> in the repo's git config file by
+modifying the git clone text that GitHub provides.
+<ul>
+<li>Say the text is <code>git@github.com:{personal}/{personalRepo}.git</code>. You can
+modify the text to <code>git@github.com-personal:{personal}/{personalRepo}.git</code>
+where <code>github.com-personal</code> corresponds to the <code>host</code> of the ssh key you
+want to use from your <code>~/.ssh/config</code> file.
+<ul>
+<li>This will set the <code>personalRepo/.git/config</code> file to use the url
+<code>git@github.com-personal:{personal}/{personalRepo}.git</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="additional-notes">Additional notes<a aria-hidden="true" class="anchor-heading icon-link" href="#additional-notes"></a></h1>
+<ul>
+<li>Converting a local vault into a private vault with the Dendron command in
+Visual Studio didn't entirely work for me, so I think it's best to just
+convert it manually.
+<ul>
+<li>Development of new Dendron features has stopped so it'll probably stay in
+the same state.</li>
+</ul>
+</li>
+<li>Steps I took for configuring which git account to use for commits in a new git
+repo:
+<ul>
+<li><code>git init</code></li>
+<li><code>git remote add origin git@{personalHost}:{personal}/{personalRepo}.git</code></li>
+<li><code>git remote -v</code></li>
+<li><code>ssh -T {personalHost}</code></li>
+<li><code>git config user.name "Your Name Here"</code></li>
+<li><code>git config user.email your@email.com</code></li>
+</ul>
+</li>
+<li><a href="https://wiki.dendron.so/notes/aikv0yamnfkcowlol7qeldy/#manual-migration-instructions">Manual migration of vaults to make them self contained</a>
+<ul>
+<li>I used this to figure out what the <code>.yml</code> and workspace files should look
+like in the vault that I'm publishing.</li>
+<li>If you're getting an issue with GitHub Actions being denied, then see
+<a href="https://stackoverflow.com/a/75308228"><code>tdy</code> on checking permissions if GitHub Actions is being denied</a>.</li>
+</ul>
+</li>
+</ul>
+<h1 id="resources">Resources<a aria-hidden="true" class="anchor-heading icon-link" href="#resources"></a></h1>
+<ul>
+<li><a href="https://gist.github.com/jexchan/2351996?permalink_comment_id=3495142#gistcomment-3495142"><code>k-o-d-r</code> discussing how to use an alias for git cloning</a></li>
+<li><a href="https://gist.github.com/jexchan/2351996?permalink_comment_id=4286595#gistcomment-4286595"><code>troccoli</code> discussing how the generic <code>*</code> host supercedes all of the other ssh keys</a></li>
+<li><a href="https://gist.github.com/alejandro-martin/aabe88cf15871121e076f66b65306610#using-two-accounts-from-the-same-server-website-optional"><code>alejandro-martin</code> discussing setting up two ssh's with the same website (GitHub) </a></li>
+<li><a href="https://gist.github.com/oanhnn/80a89405ab9023894df7"><code>oanhnn</code> discussing how to test your ssh key connection</a></li>
+<li><a href="https://stackoverflow.com/a/23730614"><code>Sharadh</code> discussing how to use the verbose version of <code>ssh -T</code></a></li>
+<li><a href="https://stackoverflow.com/a/11251797"><code>mikemaccana</code> on setting git remote</a></li>
+<li><a href="https://stackoverflow.com/a/10183740"><code>Peter Mortensen</code> on how to list git remote URLs</a></li>
+<li><a href="https://stackoverflow.com/a/75308228"><code>tdy</code> on checking permissions if GitHub Actions is being denied</a></li>
+<li><a href="https://wiki.dendron.so/notes/FnK2ws6w1uaS1YzBUY3BR/">Guide to deploying to GitHub Pages normally</a></li>
+</ul>

@@ -1,0 +1,64 @@
+<h1 id="tips">Tips<a aria-hidden="true" class="anchor-heading icon-link" href="#tips"></a></h1>
+<h1 id="summary">Summary<a aria-hidden="true" class="anchor-heading icon-link" href="#summary"></a></h1>
+<ul>
+<li>These are notes to remind me what my workflow is when writing my blog.</li>
+</ul>
+<h1 id="workflow">Workflow<a aria-hidden="true" class="anchor-heading icon-link" href="#workflow"></a></h1>
+<ul>
+<li>
+<p>Create new topic/blog post in the blog vault under the blog node.</p>
+</li>
+<li>
+<p>Add the post to the root page.</p>
+<ul>
+<li>Format should be:</li>
+</ul>
+<pre class="language-{markdown}"><code class="language-{markdown}">## YYYY.MM.DD - Title
+
+![[dendron.path#firstHeader,1:#*]]
+</code></pre>
+<ul>
+<li>Example:</li>
+</ul>
+<pre class="language-{markdown}"><code class="language-{markdown}">## 2023.04.08 - Twine setup (WIP)
+
+![[blog.guides.twine.setup#setup,1:#*]]
+</code></pre>
+<ul>
+<li>I think the <code>#firstHeader,1:#*</code> part means from the first header to the next
+header.</li>
+<li>This was used for
+<a href="https://github.com/dendronhq/dendron-site/blob/master/vault/dendron.user-guide.md#basics">the user guide page in Dendron's docs</a>.</li>
+</ul>
+</li>
+<li>
+<p>Push to repo.</p>
+</li>
+</ul>
+<h1 id="todo">Todo<a aria-hidden="true" class="anchor-heading icon-link" href="#todo"></a></h1>
+<ul>
+<li>Add workflow for mobile.</li>
+<li>For mobile, use
+<a href="https://github.com/6notes/dendronFrontmatterGen">the frontmatter generator</a>
+to add the frontmatter to the top of the note.</li>
+<li>When we have more notes, we should consider:
+<ul>
+<li>Separating the notes by year then month with headers
+<ul>
+<li>Not sure how this works with the right sidebar. I think it's just a flat
+list of all headers.</li>
+<li>Can also adding year category notes into the sidebar. For example, we
+could just have a <code>2022</code> node that's just a list of preview links like the
+homepage.</li>
+</ul>
+</li>
+<li>Hiding the blog posts older than the recent ten by using <code>&#x3C;details></code></li>
+<li>Removing older blog posts from the homepage, maybe only show the most recent
+10 blog posts
+<ul>
+<li>Not a big fan of this idea, should probably try the other methods first.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>

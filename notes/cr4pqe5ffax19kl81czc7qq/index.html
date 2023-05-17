@@ -1,0 +1,210 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><link rel="icon" href="/blog/favicon.ico"/><title>multiSSH</title><meta name="robots" content="index,follow"/><meta name="googlebot" content="index,follow"/><meta name="description" content="Personal Knowledge Space"/><meta property="og:title" content="multiSSH"/><meta property="og:description" content="Personal Knowledge Space"/><meta property="og:url" content="https://6notes.github.io//blog/notes/cr4pqe5ffax19kl81czc7qq/"/><meta property="og:type" content="article"/><meta property="article:published_time" content="2/27/2023"/><meta property="article:modified_time" content="4/10/2023"/><link rel="canonical" href="https://6notes.github.io//blog/notes/cr4pqe5ffax19kl81czc7qq/"/><meta name="next-head-count" content="14"/><link rel="preload" href="/blog/_next/static/css/0884cc5025e90402.css" as="style"/><link rel="stylesheet" href="/blog/_next/static/css/0884cc5025e90402.css" data-n-g=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/blog/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/blog/_next/static/chunks/webpack-e6501809440c92fa.js" defer=""></script><script src="/blog/_next/static/chunks/framework-28c999baf2863c3d.js" defer=""></script><script src="/blog/_next/static/chunks/main-718fd100d66b9b0a.js" defer=""></script><script src="/blog/_next/static/chunks/pages/_app-db620eca7e43bfd8.js" defer=""></script><script src="/blog/_next/static/chunks/935-4dee79e80b8641c6.js" defer=""></script><script src="/blog/_next/static/chunks/6-50972def09142ee2.js" defer=""></script><script src="/blog/_next/static/chunks/pages/notes/%5Bid%5D-78d472fa3b924116.js" defer=""></script><script src="/blog/_next/static/sFHTt62w1O4ThEk6l_JKO/_buildManifest.js" defer=""></script><script src="/blog/_next/static/sFHTt62w1O4ThEk6l_JKO/_ssgManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><section class="ant-layout" style="width:100%;min-height:100%"><header class="ant-layout-header" style="position:fixed;isolation:isolate;z-index:1;width:100%;border-bottom:1px solid #d4dadf;height:64px;padding:0 24px 0 2px"><div class="ant-row ant-row-center" style="max-width:992px;justify-content:space-between;margin:0 auto"><div style="display:flex" class="ant-col ant-col-xs-20 ant-col-sm-4"></div><div class="ant-col gutter-row ant-col-xs-0 ant-col-sm-20 ant-col-md-20 ant-col-lg-19"><div class="ant-select ant-select-lg ant-select-auto-complete ant-select-single ant-select-allow-clear ant-select-show-search" style="width:100%"><div class="ant-select-selector"><span class="ant-select-selection-search"><input type="search" autoComplete="off" class="ant-select-selection-search-input" role="combobox" aria-haspopup="listbox" aria-owns="undefined_list" aria-autocomplete="list" aria-controls="undefined_list" aria-activedescendant="undefined_list_0" value=""/></span><span class="ant-select-selection-placeholder">For full text search please use the &#x27;?&#x27; prefix. e.g. ? Onboarding</span></div></div></div><div style="display:none;align-items:center;justify-content:center" class="ant-col ant-col-xs-4 ant-col-sm-4 ant-col-md-0 ant-col-lg-0"><span role="img" aria-label="menu" style="font-size:24px" tabindex="-1" class="anticon anticon-menu"><svg viewBox="64 64 896 896" focusable="false" data-icon="menu" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M904 160H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0 624H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0-312H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8z"></path></svg></span></div></div></header><section class="ant-layout" style="margin-top:64px;display:flex;flex-direction:row"><div class="site-layout-sidebar" style="flex:0 0 auto;width:calc(max((100% - 992px) / 2, 0px) + 200px);min-width:200px;padding-left:calc((100% - 992px) / 2)"><aside class="ant-layout-sider ant-layout-sider-dark" style="position:fixed;overflow:auto;height:calc(100vh - 64px);background-color:transparent;flex:0 0 200px;max-width:200px;min-width:200px;width:200px"><div class="ant-layout-sider-children"></div></aside></div><main class="ant-layout-content side-layout-main" style="max-width:1200px;min-width:0;display:block"><div style="padding:0 24px"><div class="main-content" role="main"><div class="ant-row"><div class="ant-col ant-col-24"><div class="ant-row" style="margin-left:-10px;margin-right:-10px"><div style="padding-left:10px;padding-right:10px" class="ant-col ant-col-xs-24 ant-col-md-18"><div><h1 id="multissh">multiSSH<a aria-hidden="true" class="anchor-heading icon-link" href="#multissh"></a></h1>
+<h1 id="summary">Summary<a aria-hidden="true" class="anchor-heading icon-link" href="#summary"></a></h1>
+<p>You have a private repo and you want to publish a portion of it without having
+to manually copy files between repos.</p>
+<h1 id="outline">Outline<a aria-hidden="true" class="anchor-heading icon-link" href="#outline"></a></h1>
+<ul>
+<li>Set up the repos and accounts</li>
+<li>Set up multiple ssh</li>
+<li>Set up the Github pushing with rsync</li>
+</ul>
+<h1 id="using-git-with-multiple-ssh-keys-and-multiple-accounts">Using git with multiple ssh keys and multiple accounts<a aria-hidden="true" class="anchor-heading icon-link" href="#using-git-with-multiple-ssh-keys-and-multiple-accounts"></a></h1>
+<ul>
+<li>Situation: You want to commit to two different repos with two different
+accounts.</li>
+<li>You can do this by:
+<ul>
+<li>Generating SSH keys for both accounts.
+<ul>
+<li>Make sure you don't have a <code>*</code> host because it will override the others.</li>
+</ul>
+</li>
+<li>Register the public keys for their respective GitHub accounts.</li>
+<li><a href="https://stackoverflow.com/a/69580744">Setup <code>~/.ssh/config</code></a> so that each
+account/GitHub host has its own ssh file.</li>
+<li>Setup the git origin to have the modified host so that it uses your
+corresponding ssh key.</li>
+<li>Clone the repos.</li>
+<li>In each repo, use <code>git config</code>s to set the user name and email.</li>
+</ul>
+</li>
+</ul>
+<h1 id="ssh-keys">SSH keys<a aria-hidden="true" class="anchor-heading icon-link" href="#ssh-keys"></a></h1>
+<ul>
+<li>
+<p>If you have
+<a href="https://gist.github.com/jexchan/2351996?permalink_comment_id=4286595#gistcomment-4286595">a generic <code>*</code> host</a>,
+you'll need to make it un-generic. This is because regardless of all of your
+settings, having a generic host will supercede everything.</p>
+</li>
+<li>
+<p>For notation, I will use <code>{variable}</code> to denote variable names.</p>
+<ul>
+<li>Say you have <code>url = git@github.com:{workplaceName}/{workRepo}.git</code> in
+<code>{workRepo}/.git/config</code>. If <code>workplaceName = 'bar'; workRepo = 'chair'</code>,
+then the url would look like <code>url = git@github.com:bar/chair.git</code> and it
+would be in <code>bar/.git/config</code>)</li>
+</ul>
+</li>
+<li>
+<p>Say you have a cloned work repo with
+<code>url = git@github.com:{workplaceName}/{workRepo}.git</code> in
+<code>{workRepo}/.git/config</code>, you have another cloned personal repo with
+<code>url = git@github.com:{personal}/{personalRepo}.git</code> in
+<code>{personalRepo}/.git/config</code>, and a <code>~/.ssh/config</code> file with:</p>
+<pre class="language-{ssh"><code class="language-{ssh"># Work/All purpose
+Host *
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_rsa
+
+# Personal
+Host github.com-personal
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_rsa_personal
+</code></pre>
+<p>The default ssh keys for both the work and personal repos will be the work ssh
+key because the <code>*</code> host setting takes priority over all of the other hosts.</p>
+</li>
+<li>
+<p>Here's what you can do to fix this:</p>
+<ul>
+<li>Modify the <code>*</code> host:
+<ul>
+<li>Change the host to <code>work</code>.</li>
+<li>Add <code>User git</code>.</li>
+<li>Possibly optional: Add <code>IdentitiesOnly yes</code></li>
+</ul>
+</li>
+<li>Modify <code>workRepo/.git/config</code>:
+<ul>
+<li>Change the url to <code>work:workplaceName/workplaceName.git</code>.</li>
+</ul>
+</li>
+<li>Possibly optional: Modify the <code>github.com-personal</code> host:
+<ul>
+<li>Add <code>IdentitiesOnly yes</code></li>
+</ul>
+</li>
+<li>Modify <code>personalRepo/.git/config</code>:
+<ul>
+<li>Change the url to <code>git@github.com-personal:personalName/personalRepo.git</code></li>
+</ul>
+</li>
+<li>The updated config file should look like this:</li>
+</ul>
+<pre class="language-{ssh"><code class="language-{ssh">Host work
+  HostName github.com
+  User git
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_rsa
+  IdentitiesOnly yes
+
+Host github.com-personal
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_rsa_personal
+  IdentitiesOnly yes
+</code></pre>
+</li>
+<li>
+<p>You can verify that the ssh keys are set up properly by doing the following:</p>
+<ul>
+<li>Use <code>ssh -T {Host}</code> for both hosts.
+<ul>
+<li>You can use <code>ssh -vT {Host}</code> instead for a more verbose message for
+debugging.</li>
+<li>You should get something like: <code>Hi {sshName}! You've successfully ...</code>,
+and the ssh names should be different between the repos.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="git-configuration">Git configuration<a aria-hidden="true" class="anchor-heading icon-link" href="#git-configuration"></a></h1>
+<ul>
+<li>Once you're done fixing the ssh keys, you'll have to configure the remote URL
+for git and the user name and email for the repo you're working with. By
+default you will be making commits with the user/email in your global
+<code>gitconfig</code>, but you can override this in a specific repo with the following:
+<ul>
+<li><code>git config user.name "Your Name Here"</code></li>
+<li><code>git config user.email your@email.com</code></li>
+<li>Use the following to update your git origin remote URL:
+<ul>
+<li><code>git remote add origin git@{personalHost}:{personal}/{personalRepo}.git</code></li>
+<li><code>git remote -v</code></li>
+</ul>
+</li>
+<li>Make local commit to both repos then use <code>git log</code> to verify:
+<ul>
+<li>Make a small change to a file.</li>
+<li>Do a <code>git add</code>.</li>
+<li>Do a <code>git commit</code>.</li>
+<li>Do <code>git log</code> and check that the author name.</li>
+<li>Do <code>git reset HEAD~1</code> to undo the local commit you just made.</li>
+<li>Undo the small change you made to the file.</li>
+<li>You should get different author names between the two repos.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>In the future, you can set the <code>url</code> in the repo's git config file by
+modifying the git clone text that GitHub provides.
+<ul>
+<li>Say the text is <code>git@github.com:{personal}/{personalRepo}.git</code>. You can
+modify the text to <code>git@github.com-personal:{personal}/{personalRepo}.git</code>
+where <code>github.com-personal</code> corresponds to the <code>host</code> of the ssh key you
+want to use from your <code>~/.ssh/config</code> file.
+<ul>
+<li>This will set the <code>personalRepo/.git/config</code> file to use the url
+<code>git@github.com-personal:{personal}/{personalRepo}.git</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="additional-notes">Additional notes<a aria-hidden="true" class="anchor-heading icon-link" href="#additional-notes"></a></h1>
+<ul>
+<li>Converting a local vault into a private vault with the Dendron command in
+Visual Studio didn't entirely work for me, so I think it's best to just
+convert it manually.
+<ul>
+<li>Development of new Dendron features has stopped so it'll probably stay in
+the same state.</li>
+</ul>
+</li>
+<li>Steps I took for configuring which git account to use for commits in a new git
+repo:
+<ul>
+<li><code>git init</code></li>
+<li><code>git remote add origin git@{personalHost}:{personal}/{personalRepo}.git</code></li>
+<li><code>git remote -v</code></li>
+<li><code>ssh -T {personalHost}</code></li>
+<li><code>git config user.name "Your Name Here"</code></li>
+<li><code>git config user.email your@email.com</code></li>
+</ul>
+</li>
+<li><a href="https://wiki.dendron.so/notes/aikv0yamnfkcowlol7qeldy/#manual-migration-instructions">Manual migration of vaults to make them self contained</a>
+<ul>
+<li>I used this to figure out what the <code>.yml</code> and workspace files should look
+like in the vault that I'm publishing.</li>
+<li>If you're getting an issue with GitHub Actions being denied, then see
+<a href="https://stackoverflow.com/a/75308228"><code>tdy</code> on checking permissions if GitHub Actions is being denied</a>.</li>
+</ul>
+</li>
+</ul>
+<h1 id="resources">Resources<a aria-hidden="true" class="anchor-heading icon-link" href="#resources"></a></h1>
+<ul>
+<li><a href="https://gist.github.com/jexchan/2351996?permalink_comment_id=3495142#gistcomment-3495142"><code>k-o-d-r</code> discussing how to use an alias for git cloning</a></li>
+<li><a href="https://gist.github.com/jexchan/2351996?permalink_comment_id=4286595#gistcomment-4286595"><code>troccoli</code> discussing how the generic <code>*</code> host supercedes all of the other ssh keys</a></li>
+<li><a href="https://gist.github.com/alejandro-martin/aabe88cf15871121e076f66b65306610#using-two-accounts-from-the-same-server-website-optional"><code>alejandro-martin</code> discussing setting up two ssh's with the same website (GitHub) </a></li>
+<li><a href="https://gist.github.com/oanhnn/80a89405ab9023894df7"><code>oanhnn</code> discussing how to test your ssh key connection</a></li>
+<li><a href="https://stackoverflow.com/a/23730614"><code>Sharadh</code> discussing how to use the verbose version of <code>ssh -T</code></a></li>
+<li><a href="https://stackoverflow.com/a/11251797"><code>mikemaccana</code> on setting git remote</a></li>
+<li><a href="https://stackoverflow.com/a/10183740"><code>Peter Mortensen</code> on how to list git remote URLs</a></li>
+<li><a href="https://stackoverflow.com/a/75308228"><code>tdy</code> on checking permissions if GitHub Actions is being denied</a></li>
+<li><a href="https://wiki.dendron.so/notes/FnK2ws6w1uaS1YzBUY3BR/">Guide to deploying to GitHub Pages normally</a></li>
+</ul></div></div><div style="padding-left:10px;padding-right:10px" class="ant-col ant-col-xs-0 ant-col-md-6"><div><div class=""><div class="ant-anchor-wrapper dendron-toc" style="max-height:calc(100vh - 64px);z-index:1"><div class="ant-anchor"><div class="ant-anchor-ink"><span class="ant-anchor-ink-ball"></span></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#summary" title="Summary">Summary</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#outline" title="Outline">Outline</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#using-git-with-multiple-ssh-keys-and-multiple-accounts" title="Using git with multiple ssh keys and multiple accounts">Using git with multiple ssh keys and multiple accounts</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#ssh-keys" title="SSH keys">SSH keys</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#git-configuration" title="Git configuration">Git configuration</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#additional-notes" title="Additional notes">Additional notes</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#resources" title="Resources">Resources</a></div></div></div></div></div></div></div></div></div></div></div><div class="ant-divider ant-divider-horizontal" role="separator"></div><footer class="ant-layout-footer" style="padding:0 24px 24px"></footer></main></section></section></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"note":{"id":"cr4pqe5ffax19kl81czc7qq","title":"multiSSH","desc":"","updated":1681108797142,"created":1677486506165,"custom":{},"fname":"blog.coding.github.multiSSH","type":"note","vault":{"fsPath":".","selfContained":true,"name":"blog","remote":{"type":"git","url":"git@blog:6notes/blog.git"}},"contentHash":"4f922d52d8aa774cf759391c7007e0a5","links":[],"anchors":{"summary":{"type":"header","text":"Summary","value":"summary","line":8,"column":0,"depth":1},"outline":{"type":"header","text":"Outline","value":"outline","line":13,"column":0,"depth":1},"using-git-with-multiple-ssh-keys-and-multiple-accounts":{"type":"header","text":"Using git with multiple ssh keys and multiple accounts","value":"using-git-with-multiple-ssh-keys-and-multiple-accounts","line":19,"column":0,"depth":1},"ssh-keys":{"type":"header","text":"SSH keys","value":"ssh-keys","line":34,"column":0,"depth":1},"git-configuration":{"type":"header","text":"Git configuration","value":"git-configuration","line":105,"column":0,"depth":1},"additional-notes":{"type":"header","text":"Additional notes","value":"additional-notes","line":133,"column":0,"depth":1},"resources":{"type":"header","text":"Resources","value":"resources","line":154,"column":0,"depth":1}},"children":[],"parent":"ql4hbmd84zhgb8u8q42kb0h","data":{}},"body":"\u003ch1 id=\"multissh\"\u003emultiSSH\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#multissh\"\u003e\u003c/a\u003e\u003c/h1\u003e\n\u003ch1 id=\"summary\"\u003eSummary\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#summary\"\u003e\u003c/a\u003e\u003c/h1\u003e\n\u003cp\u003eYou have a private repo and you want to publish a portion of it without having\nto manually copy files between repos.\u003c/p\u003e\n\u003ch1 id=\"outline\"\u003eOutline\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#outline\"\u003e\u003c/a\u003e\u003c/h1\u003e\n\u003cul\u003e\n\u003cli\u003eSet up the repos and accounts\u003c/li\u003e\n\u003cli\u003eSet up multiple ssh\u003c/li\u003e\n\u003cli\u003eSet up the Github pushing with rsync\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1 id=\"using-git-with-multiple-ssh-keys-and-multiple-accounts\"\u003eUsing git with multiple ssh keys and multiple accounts\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#using-git-with-multiple-ssh-keys-and-multiple-accounts\"\u003e\u003c/a\u003e\u003c/h1\u003e\n\u003cul\u003e\n\u003cli\u003eSituation: You want to commit to two different repos with two different\naccounts.\u003c/li\u003e\n\u003cli\u003eYou can do this by:\n\u003cul\u003e\n\u003cli\u003eGenerating SSH keys for both accounts.\n\u003cul\u003e\n\u003cli\u003eMake sure you don't have a \u003ccode\u003e*\u003c/code\u003e host because it will override the others.\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003eRegister the public keys for their respective GitHub accounts.\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://stackoverflow.com/a/69580744\"\u003eSetup \u003ccode\u003e~/.ssh/config\u003c/code\u003e\u003c/a\u003e so that each\naccount/GitHub host has its own ssh file.\u003c/li\u003e\n\u003cli\u003eSetup the git origin to have the modified host so that it uses your\ncorresponding ssh key.\u003c/li\u003e\n\u003cli\u003eClone the repos.\u003c/li\u003e\n\u003cli\u003eIn each repo, use \u003ccode\u003egit config\u003c/code\u003es to set the user name and email.\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1 id=\"ssh-keys\"\u003eSSH keys\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#ssh-keys\"\u003e\u003c/a\u003e\u003c/h1\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003eIf you have\n\u003ca href=\"https://gist.github.com/jexchan/2351996?permalink_comment_id=4286595#gistcomment-4286595\"\u003ea generic \u003ccode\u003e*\u003c/code\u003e host\u003c/a\u003e,\nyou'll need to make it un-generic. This is because regardless of all of your\nsettings, having a generic host will supercede everything.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eFor notation, I will use \u003ccode\u003e{variable}\u003c/code\u003e to denote variable names.\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eSay you have \u003ccode\u003eurl = git@github.com:{workplaceName}/{workRepo}.git\u003c/code\u003e in\n\u003ccode\u003e{workRepo}/.git/config\u003c/code\u003e. If \u003ccode\u003eworkplaceName = 'bar'; workRepo = 'chair'\u003c/code\u003e,\nthen the url would look like \u003ccode\u003eurl = git@github.com:bar/chair.git\u003c/code\u003e and it\nwould be in \u003ccode\u003ebar/.git/config\u003c/code\u003e)\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eSay you have a cloned work repo with\n\u003ccode\u003eurl = git@github.com:{workplaceName}/{workRepo}.git\u003c/code\u003e in\n\u003ccode\u003e{workRepo}/.git/config\u003c/code\u003e, you have another cloned personal repo with\n\u003ccode\u003eurl = git@github.com:{personal}/{personalRepo}.git\u003c/code\u003e in\n\u003ccode\u003e{personalRepo}/.git/config\u003c/code\u003e, and a \u003ccode\u003e~/.ssh/config\u003c/code\u003e file with:\u003c/p\u003e\n\u003cpre class=\"language-{ssh\"\u003e\u003ccode class=\"language-{ssh\"\u003e# Work/All purpose\nHost *\n  AddKeysToAgent yes\n  UseKeychain yes\n  IdentityFile ~/.ssh/id_rsa\n\n# Personal\nHost github.com-personal\n  HostName github.com\n  User git\n  IdentityFile ~/.ssh/id_rsa_personal\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eThe default ssh keys for both the work and personal repos will be the work ssh\nkey because the \u003ccode\u003e*\u003c/code\u003e host setting takes priority over all of the other hosts.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eHere's what you can do to fix this:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eModify the \u003ccode\u003e*\u003c/code\u003e host:\n\u003cul\u003e\n\u003cli\u003eChange the host to \u003ccode\u003ework\u003c/code\u003e.\u003c/li\u003e\n\u003cli\u003eAdd \u003ccode\u003eUser git\u003c/code\u003e.\u003c/li\u003e\n\u003cli\u003ePossibly optional: Add \u003ccode\u003eIdentitiesOnly yes\u003c/code\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003eModify \u003ccode\u003eworkRepo/.git/config\u003c/code\u003e:\n\u003cul\u003e\n\u003cli\u003eChange the url to \u003ccode\u003ework:workplaceName/workplaceName.git\u003c/code\u003e.\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003ePossibly optional: Modify the \u003ccode\u003egithub.com-personal\u003c/code\u003e host:\n\u003cul\u003e\n\u003cli\u003eAdd \u003ccode\u003eIdentitiesOnly yes\u003c/code\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003eModify \u003ccode\u003epersonalRepo/.git/config\u003c/code\u003e:\n\u003cul\u003e\n\u003cli\u003eChange the url to \u003ccode\u003egit@github.com-personal:personalName/personalRepo.git\u003c/code\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003eThe updated config file should look like this:\u003c/li\u003e\n\u003c/ul\u003e\n\u003cpre class=\"language-{ssh\"\u003e\u003ccode class=\"language-{ssh\"\u003eHost work\n  HostName github.com\n  User git\n  AddKeysToAgent yes\n  UseKeychain yes\n  IdentityFile ~/.ssh/id_rsa\n  IdentitiesOnly yes\n\nHost github.com-personal\n  HostName github.com\n  User git\n  IdentityFile ~/.ssh/id_rsa_personal\n  IdentitiesOnly yes\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eYou can verify that the ssh keys are set up properly by doing the following:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eUse \u003ccode\u003essh -T {Host}\u003c/code\u003e for both hosts.\n\u003cul\u003e\n\u003cli\u003eYou can use \u003ccode\u003essh -vT {Host}\u003c/code\u003e instead for a more verbose message for\ndebugging.\u003c/li\u003e\n\u003cli\u003eYou should get something like: \u003ccode\u003eHi {sshName}! You've successfully ...\u003c/code\u003e,\nand the ssh names should be different between the repos.\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1 id=\"git-configuration\"\u003eGit configuration\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#git-configuration\"\u003e\u003c/a\u003e\u003c/h1\u003e\n\u003cul\u003e\n\u003cli\u003eOnce you're done fixing the ssh keys, you'll have to configure the remote URL\nfor git and the user name and email for the repo you're working with. By\ndefault you will be making commits with the user/email in your global\n\u003ccode\u003egitconfig\u003c/code\u003e, but you can override this in a specific repo with the following:\n\u003cul\u003e\n\u003cli\u003e\u003ccode\u003egit config user.name \"Your Name Here\"\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003egit config user.email your@email.com\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003eUse the following to update your git origin remote URL:\n\u003cul\u003e\n\u003cli\u003e\u003ccode\u003egit remote add origin git@{personalHost}:{personal}/{personalRepo}.git\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003egit remote -v\u003c/code\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003eMake local commit to both repos then use \u003ccode\u003egit log\u003c/code\u003e to verify:\n\u003cul\u003e\n\u003cli\u003eMake a small change to a file.\u003c/li\u003e\n\u003cli\u003eDo a \u003ccode\u003egit add\u003c/code\u003e.\u003c/li\u003e\n\u003cli\u003eDo a \u003ccode\u003egit commit\u003c/code\u003e.\u003c/li\u003e\n\u003cli\u003eDo \u003ccode\u003egit log\u003c/code\u003e and check that the author name.\u003c/li\u003e\n\u003cli\u003eDo \u003ccode\u003egit reset HEAD~1\u003c/code\u003e to undo the local commit you just made.\u003c/li\u003e\n\u003cli\u003eUndo the small change you made to the file.\u003c/li\u003e\n\u003cli\u003eYou should get different author names between the two repos.\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003eIn the future, you can set the \u003ccode\u003eurl\u003c/code\u003e in the repo's git config file by\nmodifying the git clone text that GitHub provides.\n\u003cul\u003e\n\u003cli\u003eSay the text is \u003ccode\u003egit@github.com:{personal}/{personalRepo}.git\u003c/code\u003e. You can\nmodify the text to \u003ccode\u003egit@github.com-personal:{personal}/{personalRepo}.git\u003c/code\u003e\nwhere \u003ccode\u003egithub.com-personal\u003c/code\u003e corresponds to the \u003ccode\u003ehost\u003c/code\u003e of the ssh key you\nwant to use from your \u003ccode\u003e~/.ssh/config\u003c/code\u003e file.\n\u003cul\u003e\n\u003cli\u003eThis will set the \u003ccode\u003epersonalRepo/.git/config\u003c/code\u003e file to use the url\n\u003ccode\u003egit@github.com-personal:{personal}/{personalRepo}.git\u003c/code\u003e.\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1 id=\"additional-notes\"\u003eAdditional notes\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#additional-notes\"\u003e\u003c/a\u003e\u003c/h1\u003e\n\u003cul\u003e\n\u003cli\u003eConverting a local vault into a private vault with the Dendron command in\nVisual Studio didn't entirely work for me, so I think it's best to just\nconvert it manually.\n\u003cul\u003e\n\u003cli\u003eDevelopment of new Dendron features has stopped so it'll probably stay in\nthe same state.\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003eSteps I took for configuring which git account to use for commits in a new git\nrepo:\n\u003cul\u003e\n\u003cli\u003e\u003ccode\u003egit init\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003egit remote add origin git@{personalHost}:{personal}/{personalRepo}.git\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003egit remote -v\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003essh -T {personalHost}\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003egit config user.name \"Your Name Here\"\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003egit config user.email your@email.com\u003c/code\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://wiki.dendron.so/notes/aikv0yamnfkcowlol7qeldy/#manual-migration-instructions\"\u003eManual migration of vaults to make them self contained\u003c/a\u003e\n\u003cul\u003e\n\u003cli\u003eI used this to figure out what the \u003ccode\u003e.yml\u003c/code\u003e and workspace files should look\nlike in the vault that I'm publishing.\u003c/li\u003e\n\u003cli\u003eIf you're getting an issue with GitHub Actions being denied, then see\n\u003ca href=\"https://stackoverflow.com/a/75308228\"\u003e\u003ccode\u003etdy\u003c/code\u003e on checking permissions if GitHub Actions is being denied\u003c/a\u003e.\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1 id=\"resources\"\u003eResources\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#resources\"\u003e\u003c/a\u003e\u003c/h1\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"https://gist.github.com/jexchan/2351996?permalink_comment_id=3495142#gistcomment-3495142\"\u003e\u003ccode\u003ek-o-d-r\u003c/code\u003e discussing how to use an alias for git cloning\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://gist.github.com/jexchan/2351996?permalink_comment_id=4286595#gistcomment-4286595\"\u003e\u003ccode\u003etroccoli\u003c/code\u003e discussing how the generic \u003ccode\u003e*\u003c/code\u003e host supercedes all of the other ssh keys\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://gist.github.com/alejandro-martin/aabe88cf15871121e076f66b65306610#using-two-accounts-from-the-same-server-website-optional\"\u003e\u003ccode\u003ealejandro-martin\u003c/code\u003e discussing setting up two ssh's with the same website (GitHub) \u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://gist.github.com/oanhnn/80a89405ab9023894df7\"\u003e\u003ccode\u003eoanhnn\u003c/code\u003e discussing how to test your ssh key connection\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://stackoverflow.com/a/23730614\"\u003e\u003ccode\u003eSharadh\u003c/code\u003e discussing how to use the verbose version of \u003ccode\u003essh -T\u003c/code\u003e\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://stackoverflow.com/a/11251797\"\u003e\u003ccode\u003emikemaccana\u003c/code\u003e on setting git remote\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://stackoverflow.com/a/10183740\"\u003e\u003ccode\u003ePeter Mortensen\u003c/code\u003e on how to list git remote URLs\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://stackoverflow.com/a/75308228\"\u003e\u003ccode\u003etdy\u003c/code\u003e on checking permissions if GitHub Actions is being denied\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://wiki.dendron.so/notes/FnK2ws6w1uaS1YzBUY3BR/\"\u003eGuide to deploying to GitHub Pages normally\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e","noteIndex":{"id":"tm4x9nhy44fl9m3ex9rihwy","title":"Root","desc":"","updated":1683397745938,"created":1677391337155,"custom":{"nav_order":0,"permalink":"/"},"fname":"root","type":"note","vault":{"fsPath":".","selfContained":true,"name":"blog","remote":{"type":"git","url":"git@blog:6notes/blog.git"}},"contentHash":"3d59a1e3e5d264c1331f58d35136185d","links":[{"type":"ref","from":{"fname":"root","id":"tm4x9nhy44fl9m3ex9rihwy","vaultName":"blog"},"value":"blog.coding.mobile.fixAddressBarBlock","position":{"start":{"line":6,"column":1,"offset":85},"end":{"line":6,"column":56,"offset":140},"indent":[]},"xvault":false,"to":{"fname":"blog.coding.mobile.fixAddressBarBlock","anchorHeader":"Problem,1:#*"}},{"type":"ref","from":{"fname":"root","id":"tm4x9nhy44fl9m3ex9rihwy","vaultName":"blog"},"value":"blog.writing.twine.setup","position":{"start":{"line":10,"column":1,"offset":195},"end":{"line":10,"column":41,"offset":235},"indent":[]},"xvault":false,"to":{"fname":"blog.writing.twine.setup","anchorHeader":"setup,1:#*"}},{"type":"ref","from":{"fname":"root","id":"tm4x9nhy44fl9m3ex9rihwy","vaultName":"blog"},"value":"blog.coding.dendronFrontmatter","position":{"start":{"line":14,"column":1,"offset":302},"end":{"line":14,"column":49,"offset":350},"indent":[]},"xvault":false,"to":{"fname":"blog.coding.dendronFrontmatter","anchorHeader":"Summary,1:#*"}},{"from":{"fname":"blog","id":"lg9sys4ueuuf8w1dnrczgm0","vaultName":"blog"},"type":"backlink","position":{"start":{"line":9,"column":1,"offset":181},"end":{"line":9,"column":10,"offset":190},"indent":[]},"value":"root"}],"anchors":{"6notes-blog":{"type":"header","text":"6notes' Blog","value":"6notes-blog","line":8,"column":0,"depth":1},"20230506---fixing-address-bar-blocking-mobile-sites-in-safari":{"type":"header","text":"2023.05.06 - Fixing address bar blocking mobile sites in Safari","value":"20230506---fixing-address-bar-blocking-mobile-sites-in-safari","line":10,"column":0,"depth":2},"20230423---twinetweego-and-github-pages-setup":{"type":"header","text":"2023.04.23 - Twine/Tweego and GitHub Pages Setup","value":"20230423---twinetweego-and-github-pages-setup","line":14,"column":0,"depth":2},"20230410---creating-the-dendron-frontmattter-generator-app":{"type":"header","text":"2023.04.10 - Creating the Dendron Frontmattter Generator App","value":"20230410---creating-the-dendron-frontmattter-generator-app","line":18,"column":0,"depth":2}},"children":["lg9sys4ueuuf8w1dnrczgm0"],"parent":null,"data":{},"body":"\n# 6notes' Blog\n\n## 2023.05.06 - Fixing address bar blocking mobile sites in Safari\n\n![[blog.coding.mobile.fixAddressBarBlock#Problem,1:#*]]\n\n## 2023.04.23 - Twine/Tweego and GitHub Pages Setup\n\n![[blog.writing.twine.setup#setup,1:#*]]\n\n## 2023.04.10 - Creating the Dendron Frontmattter Generator App\n\n![[blog.coding.dendronFrontmatter#Summary,1:#*]]\n"},"collectionChildren":null,"customHeadContent":null,"config":{"version":5,"dev":{"enablePreviewV2":true,"enableSelfContainedVaults":true},"commands":{"lookup":{"note":{"selectionMode":"extract","confirmVaultOnCreate":true,"vaultSelectionModeOnCreate":"smart","leaveTrace":false,"bubbleUpCreateNew":true,"fuzzThreshold":0.2}},"randomNote":{},"insertNoteLink":{"aliasMode":"none","enableMultiSelect":false},"insertNoteIndex":{"enableMarker":false},"copyNoteLink":{"aliasMode":"title"},"templateHierarchy":"template"},"workspace":{"vaults":[{"fsPath":".","selfContained":true,"name":"blog","remote":{"type":"git","url":"git@blog:6notes/blog.git"}}],"journal":{"dailyDomain":"daily","name":"journal","dateFormat":"y.MM.dd","addBehavior":"childOfDomain"},"scratch":{"name":"scratch","dateFormat":"y.MM.dd.HHmmss","addBehavior":"asOwnDomain"},"task":{"name":"task","dateFormat":"y.MM.dd","addBehavior":"asOwnDomain","statusSymbols":{"":" ","wip":"w","done":"x","assigned":"a","moved":"m","blocked":"b","delegated":"l","dropped":"d","pending":"y"},"taskCompleteStatus":["done","x"],"prioritySymbols":{"H":"high","M":"medium","L":"low"},"todoIntegration":false,"createTaskSelectionType":"selection2link"},"graph":{"zoomSpeed":1,"createStub":false},"enableAutoCreateOnDefinition":false,"enableXVaultWikiLink":false,"enableRemoteVaultInit":true,"enableUserTags":true,"enableHashTags":true,"workspaceVaultSyncMode":"noCommit","enableAutoFoldFrontmatter":false,"enableEditorDecorations":true,"maxPreviewsCached":10,"maxNoteLength":204800,"enableFullHierarchyNoteTitle":false},"preview":{"enableFMTitle":true,"enableNoteTitleForLink":true,"enableFrontmatterTags":true,"enableHashesForFMTags":false,"enablePrettyRefs":true,"enableKatex":true,"automaticallyShowPreview":false},"publishing":{"enableFMTitle":true,"enableNoteTitleForLink":true,"enablePrettyRefs":true,"enableKatex":true,"copyAssets":true,"siteHierarchies":["root"],"writeStubs":false,"siteRootDir":"docs","seo":{"title":"Dendron","description":"Personal Knowledge Space"},"github":{"enableEditLink":true,"editLinkText":"Edit this page on GitHub","editBranch":"main","editViewMode":"tree"},"enableSiteLastModified":true,"enableFrontmatterTags":true,"enableHashesForFMTags":false,"enableRandomlyColoredTags":true,"enableTaskNotes":true,"enablePrettyLinks":true,"searchMode":"search","theme":"dark","assetsPrefix":"/blog","siteUrl":"https://6notes.github.io/","duplicateNoteBehavior":{"action":"useVault","payload":["blog","personal notes"]},"siteFaviconPath":"favicon.ico","siteIndex":"root"}}},"__N_SSG":true},"page":"/notes/[id]","query":{"id":"cr4pqe5ffax19kl81czc7qq"},"buildId":"sFHTt62w1O4ThEk6l_JKO","assetPrefix":"/blog","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

@@ -1,0 +1,1428 @@
+{
+  "notes": {
+    "403": {
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "blog",
+        "remote": {
+          "type": "git",
+          "url": "git@blog:6notes/blog.git"
+        }
+      },
+      "fname": "403",
+      "id": "403",
+      "title": "This page has not yet sprouted",
+      "schemaStub": false,
+      "type": "note",
+      "updated": 1684285428863,
+      "created": 1684285428863,
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "children": [],
+      "parent": null,
+      "data": {}
+    },
+    "tm4x9nhy44fl9m3ex9rihwy": {
+      "id": "tm4x9nhy44fl9m3ex9rihwy",
+      "title": "Root",
+      "desc": "",
+      "updated": 1683397745938,
+      "created": 1677391337155,
+      "custom": {
+        "nav_order": 0,
+        "permalink": "/"
+      },
+      "fname": "root",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "blog",
+        "remote": {
+          "type": "git",
+          "url": "git@blog:6notes/blog.git"
+        }
+      },
+      "contentHash": "3d59a1e3e5d264c1331f58d35136185d",
+      "links": [
+        {
+          "type": "ref",
+          "from": {
+            "fname": "root",
+            "id": "tm4x9nhy44fl9m3ex9rihwy",
+            "vaultName": "blog"
+          },
+          "value": "blog.coding.mobile.fixAddressBarBlock",
+          "position": {
+            "start": {
+              "line": 6,
+              "column": 1,
+              "offset": 85
+            },
+            "end": {
+              "line": 6,
+              "column": 56,
+              "offset": 140
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "to": {
+            "fname": "blog.coding.mobile.fixAddressBarBlock",
+            "anchorHeader": "Problem,1:#*"
+          }
+        },
+        {
+          "type": "ref",
+          "from": {
+            "fname": "root",
+            "id": "tm4x9nhy44fl9m3ex9rihwy",
+            "vaultName": "blog"
+          },
+          "value": "blog.writing.twine.setup",
+          "position": {
+            "start": {
+              "line": 10,
+              "column": 1,
+              "offset": 195
+            },
+            "end": {
+              "line": 10,
+              "column": 41,
+              "offset": 235
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "to": {
+            "fname": "blog.writing.twine.setup",
+            "anchorHeader": "setup,1:#*"
+          }
+        },
+        {
+          "type": "ref",
+          "from": {
+            "fname": "root",
+            "id": "tm4x9nhy44fl9m3ex9rihwy",
+            "vaultName": "blog"
+          },
+          "value": "blog.coding.dendronFrontmatter",
+          "position": {
+            "start": {
+              "line": 14,
+              "column": 1,
+              "offset": 302
+            },
+            "end": {
+              "line": 14,
+              "column": 49,
+              "offset": 350
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "to": {
+            "fname": "blog.coding.dendronFrontmatter",
+            "anchorHeader": "Summary,1:#*"
+          }
+        },
+        {
+          "from": {
+            "fname": "blog",
+            "id": "lg9sys4ueuuf8w1dnrczgm0",
+            "vaultName": "blog"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 9,
+              "column": 1,
+              "offset": 181
+            },
+            "end": {
+              "line": 9,
+              "column": 10,
+              "offset": 190
+            },
+            "indent": []
+          },
+          "value": "root"
+        }
+      ],
+      "anchors": {
+        "6notes-blog": {
+          "type": "header",
+          "text": "6notes' Blog",
+          "value": "6notes-blog",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        },
+        "20230506---fixing-address-bar-blocking-mobile-sites-in-safari": {
+          "type": "header",
+          "text": "2023.05.06 - Fixing address bar blocking mobile sites in Safari",
+          "value": "20230506---fixing-address-bar-blocking-mobile-sites-in-safari",
+          "line": 10,
+          "column": 0,
+          "depth": 2
+        },
+        "20230423---twinetweego-and-github-pages-setup": {
+          "type": "header",
+          "text": "2023.04.23 - Twine/Tweego and GitHub Pages Setup",
+          "value": "20230423---twinetweego-and-github-pages-setup",
+          "line": 14,
+          "column": 0,
+          "depth": 2
+        },
+        "20230410---creating-the-dendron-frontmattter-generator-app": {
+          "type": "header",
+          "text": "2023.04.10 - Creating the Dendron Frontmattter Generator App",
+          "value": "20230410---creating-the-dendron-frontmattter-generator-app",
+          "line": 18,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [
+        "lg9sys4ueuuf8w1dnrczgm0"
+      ],
+      "parent": null,
+      "data": {}
+    },
+    "lg9sys4ueuuf8w1dnrczgm0": {
+      "id": "lg9sys4ueuuf8w1dnrczgm0",
+      "title": "Blog",
+      "desc": "",
+      "updated": 1682217255610,
+      "created": 1679017453263,
+      "custom": {},
+      "fname": "blog",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "blog",
+        "remote": {
+          "type": "git",
+          "url": "git@blog:6notes/blog.git"
+        }
+      },
+      "contentHash": "25ec01abf78fc3ad557282797595b9bb",
+      "links": [
+        {
+          "type": "ref",
+          "from": {
+            "fname": "blog",
+            "id": "lg9sys4ueuuf8w1dnrczgm0",
+            "vaultName": "blog"
+          },
+          "value": "root",
+          "position": {
+            "start": {
+              "line": 9,
+              "column": 1,
+              "offset": 181
+            },
+            "end": {
+              "line": 9,
+              "column": 10,
+              "offset": 190
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "to": {
+            "fname": "root"
+          }
+        }
+      ],
+      "anchors": {
+        "blog": {
+          "type": "header",
+          "text": "Blog",
+          "value": "blog",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        },
+        "homepage": {
+          "type": "header",
+          "text": "Homepage",
+          "value": "homepage",
+          "line": 13,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [
+        "riei26e1qagamub98t0zjhj",
+        "7x0lsb29g29joon1whf03bp",
+        "av0u081cb6xqocl6u9pdvvj"
+      ],
+      "parent": "tm4x9nhy44fl9m3ex9rihwy",
+      "data": {}
+    },
+    "av0u081cb6xqocl6u9pdvvj": {
+      "fname": "blog.writing",
+      "stub": true,
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "blog",
+        "remote": {
+          "type": "git",
+          "url": "git@blog:6notes/blog.git"
+        }
+      },
+      "schemaStub": false,
+      "type": "note",
+      "updated": 1684285428419,
+      "created": 1684285428419,
+      "id": "av0u081cb6xqocl6u9pdvvj",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "jd5w08vofw5nggz1p9mk19b"
+      ],
+      "parent": "lg9sys4ueuuf8w1dnrczgm0",
+      "data": {},
+      "title": "Writing"
+    },
+    "jd5w08vofw5nggz1p9mk19b": {
+      "id": "jd5w08vofw5nggz1p9mk19b",
+      "title": "Twine",
+      "desc": "",
+      "updated": 1681497746325,
+      "created": 1681014717147,
+      "custom": {},
+      "fname": "blog.writing.twine",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "blog",
+        "remote": {
+          "type": "git",
+          "url": "git@blog:6notes/blog.git"
+        }
+      },
+      "contentHash": "cd19a52bfb5aab1a0f288cce945143ab",
+      "links": [],
+      "anchors": {
+        "twine": {
+          "type": "header",
+          "text": "Twine",
+          "value": "twine",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        }
+      },
+      "children": [
+        "jkoetciw8gx345vhbipiijy"
+      ],
+      "parent": "av0u081cb6xqocl6u9pdvvj",
+      "data": {}
+    },
+    "jkoetciw8gx345vhbipiijy": {
+      "id": "jkoetciw8gx345vhbipiijy",
+      "title": "Twine/Tweego and GitHub Pages Setup",
+      "desc": "",
+      "updated": 1682316172539,
+      "created": 1681014788105,
+      "custom": {},
+      "fname": "blog.writing.twine.setup",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "blog",
+        "remote": {
+          "type": "git",
+          "url": "git@blog:6notes/blog.git"
+        }
+      },
+      "contentHash": "b94aac891450c333a5eeb99a24e6fba3",
+      "links": [
+        {
+          "from": {
+            "fname": "root",
+            "id": "tm4x9nhy44fl9m3ex9rihwy",
+            "vaultName": "blog"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 10,
+              "column": 1,
+              "offset": 195
+            },
+            "end": {
+              "line": 10,
+              "column": 41,
+              "offset": 235
+            },
+            "indent": []
+          },
+          "value": "blog.writing.twine.setup"
+        }
+      ],
+      "anchors": {
+        "demo": {
+          "type": "header",
+          "text": "Demo",
+          "value": "demo",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        },
+        "setup": {
+          "type": "header",
+          "text": "Setup",
+          "value": "setup",
+          "line": 13,
+          "column": 0,
+          "depth": 1
+        },
+        "assumptions": {
+          "type": "header",
+          "text": "Assumptions",
+          "value": "assumptions",
+          "line": 20,
+          "column": 0,
+          "depth": 1
+        },
+        "rough-steps-for-twinetweego-and-github-pages-setup": {
+          "type": "header",
+          "text": "Rough steps for Twine/Tweego and GitHub Pages setup",
+          "value": "rough-steps-for-twinetweego-and-github-pages-setup",
+          "line": 26,
+          "column": 0,
+          "depth": 1
+        },
+        "testing-locally": {
+          "type": "header",
+          "text": "Testing locally",
+          "value": "testing-locally",
+          "line": 28,
+          "column": 0,
+          "depth": 2
+        },
+        "setting-up-a-repo-with-github-pages": {
+          "type": "header",
+          "text": "Setting up a repo with GitHub Pages",
+          "value": "setting-up-a-repo-with-github-pages",
+          "line": 33,
+          "column": 0,
+          "depth": 2
+        },
+        "local-tweego-installation": {
+          "type": "header",
+          "text": "Local Tweego installation",
+          "value": "local-tweego-installation",
+          "line": 40,
+          "column": 0,
+          "depth": 1
+        },
+        "tweego-usage": {
+          "type": "header",
+          "text": "Tweego usage",
+          "value": "tweego-usage",
+          "line": 53,
+          "column": 0,
+          "depth": 1
+        },
+        "cicd-github-actions": {
+          "type": "header",
+          "text": "CI/CD Github Actions",
+          "value": "cicd-github-actions",
+          "line": 90,
+          "column": 0,
+          "depth": 1
+        },
+        "notes": {
+          "type": "header",
+          "text": "Notes",
+          "value": "notes",
+          "line": 107,
+          "column": 0,
+          "depth": 2
+        },
+        "testing-changes-locally": {
+          "type": "header",
+          "text": "Testing changes locally",
+          "value": "testing-changes-locally",
+          "line": 116,
+          "column": 0,
+          "depth": 1
+        },
+        "resources": {
+          "type": "header",
+          "text": "Resources",
+          "value": "resources",
+          "line": 124,
+          "column": 0,
+          "depth": 1
+        },
+        "further-areas-to-explore": {
+          "type": "header",
+          "text": "Further areas to explore",
+          "value": "further-areas-to-explore",
+          "line": 130,
+          "column": 0,
+          "depth": 1
+        }
+      },
+      "children": [],
+      "parent": "jd5w08vofw5nggz1p9mk19b",
+      "data": {}
+    },
+    "7x0lsb29g29joon1whf03bp": {
+      "fname": "blog.coding",
+      "stub": true,
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "blog",
+        "remote": {
+          "type": "git",
+          "url": "git@blog:6notes/blog.git"
+        }
+      },
+      "schemaStub": false,
+      "type": "note",
+      "updated": 1684285428418,
+      "created": 1684285428418,
+      "id": "7x0lsb29g29joon1whf03bp",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "iyrjekgnm084f8hjabat7eh",
+        "veya3k7qlff2a6ny2xjf09n",
+        "ql4hbmd84zhgb8u8q42kb0h",
+        "xzhnlho860abeqer8mxj1gd",
+        "ghx9nr2wihvnxsgftl87rnc"
+      ],
+      "parent": "lg9sys4ueuuf8w1dnrczgm0",
+      "data": {},
+      "title": "Coding"
+    },
+    "ghx9nr2wihvnxsgftl87rnc": {
+      "fname": "blog.coding.react",
+      "stub": true,
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "blog",
+        "remote": {
+          "type": "git",
+          "url": "git@blog:6notes/blog.git"
+        }
+      },
+      "schemaStub": false,
+      "type": "note",
+      "updated": 1684285428423,
+      "created": 1684285428423,
+      "id": "ghx9nr2wihvnxsgftl87rnc",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "pxx149bsrsgw5wtklgdomb7"
+      ],
+      "parent": "7x0lsb29g29joon1whf03bp",
+      "data": {},
+      "title": "React"
+    },
+    "pxx149bsrsgw5wtklgdomb7": {
+      "fname": "blog.coding.react.hooks",
+      "stub": true,
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "blog",
+        "remote": {
+          "type": "git",
+          "url": "git@blog:6notes/blog.git"
+        }
+      },
+      "schemaStub": false,
+      "type": "note",
+      "updated": 1684285428423,
+      "created": 1684285428423,
+      "id": "pxx149bsrsgw5wtklgdomb7",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "ats3wsz08wgubap9pgrv6j2"
+      ],
+      "parent": "ghx9nr2wihvnxsgftl87rnc",
+      "data": {},
+      "title": "Hooks"
+    },
+    "ats3wsz08wgubap9pgrv6j2": {
+      "id": "ats3wsz08wgubap9pgrv6j2",
+      "title": "Hooks",
+      "desc": "",
+      "updated": 1677486439066,
+      "created": 1677486430129,
+      "custom": {},
+      "fname": "blog.coding.react.hooks.md",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "blog",
+        "remote": {
+          "type": "git",
+          "url": "git@blog:6notes/blog.git"
+        }
+      },
+      "contentHash": "8522f8b92f151fa04b9b815c7c249f88",
+      "links": [],
+      "anchors": {
+        "wip-notes": {
+          "type": "header",
+          "text": "(WIP) Notes",
+          "value": "wip-notes",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        },
+        "resources": {
+          "type": "header",
+          "text": "Resources",
+          "value": "resources",
+          "line": 16,
+          "column": 0,
+          "depth": 1
+        }
+      },
+      "children": [],
+      "parent": "pxx149bsrsgw5wtklgdomb7",
+      "data": {}
+    },
+    "xzhnlho860abeqer8mxj1gd": {
+      "fname": "blog.coding.mobile",
+      "stub": true,
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "blog",
+        "remote": {
+          "type": "git",
+          "url": "git@blog:6notes/blog.git"
+        }
+      },
+      "schemaStub": false,
+      "type": "note",
+      "updated": 1684285428422,
+      "created": 1684285428422,
+      "id": "xzhnlho860abeqer8mxj1gd",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "zuldcwad3qhu690rvnxeyok"
+      ],
+      "parent": "7x0lsb29g29joon1whf03bp",
+      "data": {},
+      "title": "Mobile"
+    },
+    "zuldcwad3qhu690rvnxeyok": {
+      "id": "zuldcwad3qhu690rvnxeyok",
+      "title": "fixAddressBarBlock",
+      "desc": "",
+      "updated": 1683397577228,
+      "created": 1683397001058,
+      "custom": {},
+      "fname": "blog.coding.mobile.fixAddressBarBlock",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "blog",
+        "remote": {
+          "type": "git",
+          "url": "git@blog:6notes/blog.git"
+        }
+      },
+      "contentHash": "7de3756a8e5af39f1b62bde5c955fcf1",
+      "links": [
+        {
+          "from": {
+            "fname": "root",
+            "id": "tm4x9nhy44fl9m3ex9rihwy",
+            "vaultName": "blog"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 6,
+              "column": 1,
+              "offset": 85
+            },
+            "end": {
+              "line": 6,
+              "column": 56,
+              "offset": 140
+            },
+            "indent": []
+          },
+          "value": "blog.coding.mobile.fixAddressBarBlock"
+        }
+      ],
+      "anchors": {
+        "problem": {
+          "type": "header",
+          "text": "Problem",
+          "value": "problem",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        },
+        "solution": {
+          "type": "header",
+          "text": "Solution",
+          "value": "solution",
+          "line": 13,
+          "column": 0,
+          "depth": 1
+        }
+      },
+      "children": [],
+      "parent": "xzhnlho860abeqer8mxj1gd",
+      "data": {}
+    },
+    "ql4hbmd84zhgb8u8q42kb0h": {
+      "fname": "blog.coding.github",
+      "stub": true,
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "blog",
+        "remote": {
+          "type": "git",
+          "url": "git@blog:6notes/blog.git"
+        }
+      },
+      "schemaStub": false,
+      "type": "note",
+      "updated": 1684285428421,
+      "created": 1684285428421,
+      "id": "ql4hbmd84zhgb8u8q42kb0h",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "cr4pqe5ffax19kl81czc7qq",
+        "3z5di4v1qfglionxzng5nwm"
+      ],
+      "parent": "7x0lsb29g29joon1whf03bp",
+      "data": {},
+      "title": "GitHub"
+    },
+    "3z5di4v1qfglionxzng5nwm": {
+      "id": "3z5di4v1qfglionxzng5nwm",
+      "title": "pushSettings",
+      "desc": "",
+      "updated": 1677486470947,
+      "created": 1677486458905,
+      "custom": {},
+      "fname": "blog.coding.github.pushSettings",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "blog",
+        "remote": {
+          "type": "git",
+          "url": "git@blog:6notes/blog.git"
+        }
+      },
+      "contentHash": "1ec9ec920cd7ce99f12eaf7b11b1c3b8",
+      "links": [],
+      "anchors": {
+        "wip-changing-git-push-settings-to-be-less-tedious": {
+          "type": "header",
+          "text": "(WIP) Changing git push settings to be less tedious",
+          "value": "wip-changing-git-push-settings-to-be-less-tedious",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        },
+        "resources": {
+          "type": "header",
+          "text": "Resources",
+          "value": "resources",
+          "line": 17,
+          "column": 0,
+          "depth": 1
+        }
+      },
+      "children": [],
+      "parent": "ql4hbmd84zhgb8u8q42kb0h",
+      "data": {}
+    },
+    "cr4pqe5ffax19kl81czc7qq": {
+      "id": "cr4pqe5ffax19kl81czc7qq",
+      "title": "multiSSH",
+      "desc": "",
+      "updated": 1681108797142,
+      "created": 1677486506165,
+      "custom": {},
+      "fname": "blog.coding.github.multiSSH",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "blog",
+        "remote": {
+          "type": "git",
+          "url": "git@blog:6notes/blog.git"
+        }
+      },
+      "contentHash": "4f922d52d8aa774cf759391c7007e0a5",
+      "links": [],
+      "anchors": {
+        "summary": {
+          "type": "header",
+          "text": "Summary",
+          "value": "summary",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        },
+        "outline": {
+          "type": "header",
+          "text": "Outline",
+          "value": "outline",
+          "line": 13,
+          "column": 0,
+          "depth": 1
+        },
+        "using-git-with-multiple-ssh-keys-and-multiple-accounts": {
+          "type": "header",
+          "text": "Using git with multiple ssh keys and multiple accounts",
+          "value": "using-git-with-multiple-ssh-keys-and-multiple-accounts",
+          "line": 19,
+          "column": 0,
+          "depth": 1
+        },
+        "ssh-keys": {
+          "type": "header",
+          "text": "SSH keys",
+          "value": "ssh-keys",
+          "line": 34,
+          "column": 0,
+          "depth": 1
+        },
+        "git-configuration": {
+          "type": "header",
+          "text": "Git configuration",
+          "value": "git-configuration",
+          "line": 105,
+          "column": 0,
+          "depth": 1
+        },
+        "additional-notes": {
+          "type": "header",
+          "text": "Additional notes",
+          "value": "additional-notes",
+          "line": 133,
+          "column": 0,
+          "depth": 1
+        },
+        "resources": {
+          "type": "header",
+          "text": "Resources",
+          "value": "resources",
+          "line": 154,
+          "column": 0,
+          "depth": 1
+        }
+      },
+      "children": [],
+      "parent": "ql4hbmd84zhgb8u8q42kb0h",
+      "data": {}
+    },
+    "veya3k7qlff2a6ny2xjf09n": {
+      "fname": "blog.coding.chakraUi",
+      "stub": true,
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "blog",
+        "remote": {
+          "type": "git",
+          "url": "git@blog:6notes/blog.git"
+        }
+      },
+      "schemaStub": false,
+      "type": "note",
+      "updated": 1684285428420,
+      "created": 1684285428420,
+      "id": "veya3k7qlff2a6ny2xjf09n",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "upbj8n0yl36fhbs78qjobr6"
+      ],
+      "parent": "7x0lsb29g29joon1whf03bp",
+      "data": {},
+      "title": "chakraUi"
+    },
+    "upbj8n0yl36fhbs78qjobr6": {
+      "id": "upbj8n0yl36fhbs78qjobr6",
+      "title": "props",
+      "desc": "",
+      "updated": 1677486496054,
+      "created": 1677486488038,
+      "custom": {},
+      "fname": "blog.coding.chakraUi.props",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "blog",
+        "remote": {
+          "type": "git",
+          "url": "git@blog:6notes/blog.git"
+        }
+      },
+      "contentHash": "10b634da7521212a5df6cf805ebc6ead",
+      "links": [],
+      "anchors": {
+        "the-number-sizes-in-props": {
+          "type": "header",
+          "text": "The number sizes in props",
+          "value": "the-number-sizes-in-props",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        }
+      },
+      "children": [],
+      "parent": "veya3k7qlff2a6ny2xjf09n",
+      "data": {}
+    },
+    "iyrjekgnm084f8hjabat7eh": {
+      "id": "iyrjekgnm084f8hjabat7eh",
+      "title": "dendronFrontmatter",
+      "desc": "",
+      "updated": 1681261633251,
+      "created": 1681110151127,
+      "custom": {},
+      "fname": "blog.coding.dendronFrontmatter",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "blog",
+        "remote": {
+          "type": "git",
+          "url": "git@blog:6notes/blog.git"
+        }
+      },
+      "contentHash": "9cce7d09951d9646a809671ae8b683a1",
+      "links": [
+        {
+          "from": {
+            "fname": "root",
+            "id": "tm4x9nhy44fl9m3ex9rihwy",
+            "vaultName": "blog"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 14,
+              "column": 1,
+              "offset": 302
+            },
+            "end": {
+              "line": 14,
+              "column": 49,
+              "offset": 350
+            },
+            "indent": []
+          },
+          "value": "blog.coding.dendronFrontmatter"
+        }
+      ],
+      "anchors": {
+        "summary": {
+          "type": "header",
+          "text": "Summary",
+          "value": "summary",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        },
+        "outline": {
+          "type": "header",
+          "text": "Outline",
+          "value": "outline",
+          "line": 16,
+          "column": 0,
+          "depth": 1
+        },
+        "dendrons-frontmatter-id": {
+          "type": "header",
+          "text": "Dendron's frontmatter id",
+          "value": "dendrons-frontmatter-id",
+          "line": 27,
+          "column": 0,
+          "depth": 1
+        },
+        "dendrons-frontmatter-createdupdated": {
+          "type": "header",
+          "text": "Dendron's frontmatter created/updated",
+          "value": "dendrons-frontmatter-createdupdated",
+          "line": 48,
+          "column": 0,
+          "depth": 1
+        },
+        "creating-an-app-to-use-on-mobile": {
+          "type": "header",
+          "text": "Creating an app to use on mobile",
+          "value": "creating-an-app-to-use-on-mobile",
+          "line": 57,
+          "column": 0,
+          "depth": 1
+        },
+        "images-not-showing-up-on-github-pages": {
+          "type": "header",
+          "text": "Images not showing up on GitHub Pages",
+          "value": "images-not-showing-up-on-github-pages",
+          "line": 80,
+          "column": 0,
+          "depth": 2
+        },
+        "favicon-not-showing-up-on-mobile": {
+          "type": "header",
+          "text": "Favicon not showing up on mobile",
+          "value": "favicon-not-showing-up-on-mobile",
+          "line": 86,
+          "column": 0,
+          "depth": 2
+        },
+        "editor-isnt-editable": {
+          "type": "header",
+          "text": "Editor isn't editable",
+          "value": "editor-isnt-editable",
+          "line": 91,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "7x0lsb29g29joon1whf03bp",
+      "data": {}
+    },
+    "riei26e1qagamub98t0zjhj": {
+      "id": "riei26e1qagamub98t0zjhj",
+      "title": "Tips",
+      "desc": "",
+      "updated": 1681019784575,
+      "created": 1681018685698,
+      "custom": {},
+      "fname": "blog.tips",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "blog",
+        "remote": {
+          "type": "git",
+          "url": "git@blog:6notes/blog.git"
+        }
+      },
+      "contentHash": "ecbf6fd3a52410eab8ca3e5e4b4f6589",
+      "links": [],
+      "anchors": {
+        "summary": {
+          "type": "header",
+          "text": "Summary",
+          "value": "summary",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        },
+        "workflow": {
+          "type": "header",
+          "text": "Workflow",
+          "value": "workflow",
+          "line": 12,
+          "column": 0,
+          "depth": 1
+        },
+        "todo": {
+          "type": "header",
+          "text": "Todo",
+          "value": "todo",
+          "line": 40,
+          "column": 0,
+          "depth": 1
+        }
+      },
+      "children": [],
+      "parent": "lg9sys4ueuuf8w1dnrczgm0",
+      "data": {}
+    }
+  },
+  "domains": [
+    {
+      "id": "tm4x9nhy44fl9m3ex9rihwy",
+      "title": "Root",
+      "desc": "",
+      "updated": 1683397745938,
+      "created": 1677391337155,
+      "custom": {
+        "nav_order": 0,
+        "permalink": "/"
+      },
+      "fname": "root",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "blog",
+        "remote": {
+          "type": "git",
+          "url": "git@blog:6notes/blog.git"
+        }
+      },
+      "contentHash": "3d59a1e3e5d264c1331f58d35136185d",
+      "links": [
+        {
+          "type": "ref",
+          "from": {
+            "fname": "root",
+            "id": "tm4x9nhy44fl9m3ex9rihwy",
+            "vaultName": "blog"
+          },
+          "value": "blog.coding.mobile.fixAddressBarBlock",
+          "position": {
+            "start": {
+              "line": 6,
+              "column": 1,
+              "offset": 85
+            },
+            "end": {
+              "line": 6,
+              "column": 56,
+              "offset": 140
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "to": {
+            "fname": "blog.coding.mobile.fixAddressBarBlock",
+            "anchorHeader": "Problem,1:#*"
+          }
+        },
+        {
+          "type": "ref",
+          "from": {
+            "fname": "root",
+            "id": "tm4x9nhy44fl9m3ex9rihwy",
+            "vaultName": "blog"
+          },
+          "value": "blog.writing.twine.setup",
+          "position": {
+            "start": {
+              "line": 10,
+              "column": 1,
+              "offset": 195
+            },
+            "end": {
+              "line": 10,
+              "column": 41,
+              "offset": 235
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "to": {
+            "fname": "blog.writing.twine.setup",
+            "anchorHeader": "setup,1:#*"
+          }
+        },
+        {
+          "type": "ref",
+          "from": {
+            "fname": "root",
+            "id": "tm4x9nhy44fl9m3ex9rihwy",
+            "vaultName": "blog"
+          },
+          "value": "blog.coding.dendronFrontmatter",
+          "position": {
+            "start": {
+              "line": 14,
+              "column": 1,
+              "offset": 302
+            },
+            "end": {
+              "line": 14,
+              "column": 49,
+              "offset": 350
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "to": {
+            "fname": "blog.coding.dendronFrontmatter",
+            "anchorHeader": "Summary,1:#*"
+          }
+        },
+        {
+          "from": {
+            "fname": "blog",
+            "id": "lg9sys4ueuuf8w1dnrczgm0",
+            "vaultName": "blog"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 9,
+              "column": 1,
+              "offset": 181
+            },
+            "end": {
+              "line": 9,
+              "column": 10,
+              "offset": 190
+            },
+            "indent": []
+          },
+          "value": "root"
+        }
+      ],
+      "anchors": {
+        "6notes-blog": {
+          "type": "header",
+          "text": "6notes' Blog",
+          "value": "6notes-blog",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        },
+        "20230506---fixing-address-bar-blocking-mobile-sites-in-safari": {
+          "type": "header",
+          "text": "2023.05.06 - Fixing address bar blocking mobile sites in Safari",
+          "value": "20230506---fixing-address-bar-blocking-mobile-sites-in-safari",
+          "line": 10,
+          "column": 0,
+          "depth": 2
+        },
+        "20230423---twinetweego-and-github-pages-setup": {
+          "type": "header",
+          "text": "2023.04.23 - Twine/Tweego and GitHub Pages Setup",
+          "value": "20230423---twinetweego-and-github-pages-setup",
+          "line": 14,
+          "column": 0,
+          "depth": 2
+        },
+        "20230410---creating-the-dendron-frontmattter-generator-app": {
+          "type": "header",
+          "text": "2023.04.10 - Creating the Dendron Frontmattter Generator App",
+          "value": "20230410---creating-the-dendron-frontmattter-generator-app",
+          "line": 18,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [
+        "lg9sys4ueuuf8w1dnrczgm0"
+      ],
+      "parent": null,
+      "data": {},
+      "body": "\n# 6notes' Blog\n\n## 2023.05.06 - Fixing address bar blocking mobile sites in Safari\n\n![[blog.coding.mobile.fixAddressBarBlock#Problem,1:#*]]\n\n## 2023.04.23 - Twine/Tweego and GitHub Pages Setup\n\n![[blog.writing.twine.setup#setup,1:#*]]\n\n## 2023.04.10 - Creating the Dendron Frontmattter Generator App\n\n![[blog.coding.dendronFrontmatter#Summary,1:#*]]\n"
+    }
+  ],
+  "noteIndex": {
+    "id": "tm4x9nhy44fl9m3ex9rihwy",
+    "title": "Root",
+    "desc": "",
+    "updated": 1683397745938,
+    "created": 1677391337155,
+    "custom": {
+      "nav_order": 0,
+      "permalink": "/"
+    },
+    "fname": "root",
+    "type": "note",
+    "vault": {
+      "fsPath": ".",
+      "selfContained": true,
+      "name": "blog",
+      "remote": {
+        "type": "git",
+        "url": "git@blog:6notes/blog.git"
+      }
+    },
+    "contentHash": "3d59a1e3e5d264c1331f58d35136185d",
+    "links": [
+      {
+        "type": "ref",
+        "from": {
+          "fname": "root",
+          "id": "tm4x9nhy44fl9m3ex9rihwy",
+          "vaultName": "blog"
+        },
+        "value": "blog.coding.mobile.fixAddressBarBlock",
+        "position": {
+          "start": {
+            "line": 6,
+            "column": 1,
+            "offset": 85
+          },
+          "end": {
+            "line": 6,
+            "column": 56,
+            "offset": 140
+          },
+          "indent": []
+        },
+        "xvault": false,
+        "to": {
+          "fname": "blog.coding.mobile.fixAddressBarBlock",
+          "anchorHeader": "Problem,1:#*"
+        }
+      },
+      {
+        "type": "ref",
+        "from": {
+          "fname": "root",
+          "id": "tm4x9nhy44fl9m3ex9rihwy",
+          "vaultName": "blog"
+        },
+        "value": "blog.writing.twine.setup",
+        "position": {
+          "start": {
+            "line": 10,
+            "column": 1,
+            "offset": 195
+          },
+          "end": {
+            "line": 10,
+            "column": 41,
+            "offset": 235
+          },
+          "indent": []
+        },
+        "xvault": false,
+        "to": {
+          "fname": "blog.writing.twine.setup",
+          "anchorHeader": "setup,1:#*"
+        }
+      },
+      {
+        "type": "ref",
+        "from": {
+          "fname": "root",
+          "id": "tm4x9nhy44fl9m3ex9rihwy",
+          "vaultName": "blog"
+        },
+        "value": "blog.coding.dendronFrontmatter",
+        "position": {
+          "start": {
+            "line": 14,
+            "column": 1,
+            "offset": 302
+          },
+          "end": {
+            "line": 14,
+            "column": 49,
+            "offset": 350
+          },
+          "indent": []
+        },
+        "xvault": false,
+        "to": {
+          "fname": "blog.coding.dendronFrontmatter",
+          "anchorHeader": "Summary,1:#*"
+        }
+      },
+      {
+        "from": {
+          "fname": "blog",
+          "id": "lg9sys4ueuuf8w1dnrczgm0",
+          "vaultName": "blog"
+        },
+        "type": "backlink",
+        "position": {
+          "start": {
+            "line": 9,
+            "column": 1,
+            "offset": 181
+          },
+          "end": {
+            "line": 9,
+            "column": 10,
+            "offset": 190
+          },
+          "indent": []
+        },
+        "value": "root"
+      }
+    ],
+    "anchors": {
+      "6notes-blog": {
+        "type": "header",
+        "text": "6notes' Blog",
+        "value": "6notes-blog",
+        "line": 8,
+        "column": 0,
+        "depth": 1
+      },
+      "20230506---fixing-address-bar-blocking-mobile-sites-in-safari": {
+        "type": "header",
+        "text": "2023.05.06 - Fixing address bar blocking mobile sites in Safari",
+        "value": "20230506---fixing-address-bar-blocking-mobile-sites-in-safari",
+        "line": 10,
+        "column": 0,
+        "depth": 2
+      },
+      "20230423---twinetweego-and-github-pages-setup": {
+        "type": "header",
+        "text": "2023.04.23 - Twine/Tweego and GitHub Pages Setup",
+        "value": "20230423---twinetweego-and-github-pages-setup",
+        "line": 14,
+        "column": 0,
+        "depth": 2
+      },
+      "20230410---creating-the-dendron-frontmattter-generator-app": {
+        "type": "header",
+        "text": "2023.04.10 - Creating the Dendron Frontmattter Generator App",
+        "value": "20230410---creating-the-dendron-frontmattter-generator-app",
+        "line": 18,
+        "column": 0,
+        "depth": 2
+      }
+    },
+    "children": [
+      "lg9sys4ueuuf8w1dnrczgm0"
+    ],
+    "parent": null,
+    "data": {},
+    "body": "\n# 6notes' Blog\n\n## 2023.05.06 - Fixing address bar blocking mobile sites in Safari\n\n![[blog.coding.mobile.fixAddressBarBlock#Problem,1:#*]]\n\n## 2023.04.23 - Twine/Tweego and GitHub Pages Setup\n\n![[blog.writing.twine.setup#setup,1:#*]]\n\n## 2023.04.10 - Creating the Dendron Frontmattter Generator App\n\n![[blog.coding.dendronFrontmatter#Summary,1:#*]]\n"
+  },
+  "vaults": [
+    {
+      "fsPath": ".",
+      "selfContained": true,
+      "name": "blog",
+      "remote": {
+        "type": "git",
+        "url": "git@blog:6notes/blog.git"
+      }
+    }
+  ]
+}
